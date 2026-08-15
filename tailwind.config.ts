@@ -1,0 +1,46 @@
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: ["./src/**/*.{ts,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        charcoal: {
+          DEFAULT: "#17181b",
+          soft: "#232427",
+          line: "#33343780",
+        },
+        warm: {
+          DEFAULT: "#f7f4ef",
+          dim: "#efe9df",
+        },
+        beige: "#e9e2d6",
+        wood: {
+          DEFAULT: "#7c5a3a",
+          dark: "#4a3524",
+        },
+        brass: {
+          DEFAULT: "#ad8a52",
+          soft: "#cbb187",
+        },
+      },
+      fontFamily: {
+        display: ["var(--font-display)", "serif"],
+        sans: ["var(--font-sans)", "sans-serif"],
+        arabic: ["var(--font-arabic)", "sans-serif"],
+      },
+      letterSpacing: {
+        widest2: "0.28em",
+      },
+      maxWidth: {
+        content: "1440px",
+      },
+      transitionTimingFunction: {
+        editorial: "cubic-bezier(0.22, 1, 0.36, 1)",
+      },
+    },
+  },
+  plugins: [],
+};
+
+export default config;

@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-charcoal-line;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  html,
+  body {
+    /* Defense-in-depth: several sections use deliberate horizontal scroll
+       strips (StoryTimeline, MaterialSection) — this guarantees none of
+       them, nor an off-canvas element, can ever widen the *page* itself. */
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-warm text-charcoal antialiased;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+
+  ::selection {
+    @apply bg-brass/30 text-charcoal;
+  }
+
+  [dir="rtl"] .ltr-only {
+    display: none;
+  }
+  [dir="ltr"] .rtl-only {
+    display: none;
+  }
+}
+
+@layer utilities {
+  .container-edit {
+    @apply mx-auto w-full max-w-content px-6 sm:px-10 lg:px-16;
+  }
+
+  .eyebrow {
+    @apply text-xs sm:text-sm font-medium uppercase tracking-widest2 text-brass;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom cursor (desktop, pointer:fine only — see CustomCursor.tsx) */
+.has-custom-cursor,
+.has-custom-cursor a,
+.has-custom-cursor button {
+  cursor: none;
+}
+
+@media (max-width: 767px), (pointer: coarse) {
+  .has-custom-cursor,
+  .has-custom-cursor a,
+  .has-custom-cursor button {
+    cursor: auto;
+  }
+}
