@@ -8,6 +8,7 @@ import { materialStatement } from "@/data/company";
 
 const strip = [
   { src: "/images/joinery-detail.jpg", alt: "Joinery workshop tools and timber" },
+  { src: "/images/wood-shingle-detail.jpg", alt: "Traditional carved wood shingle facade detail" },
   { src: "/images/wardrobe-storage.jpg", alt: "Fitted wardrobe cabinetry" },
   { src: "/images/hero-main.jpg", alt: "Sculptural wood wall detailing" },
   { src: "/images/kitchen-alt.jpg", alt: "Wood-panelled kitchen detail" },

@@ -69,7 +69,17 @@ to 10s, downscaled to 1080p, stripped of audio, and re-encoded with ffmpeg
 to ~1MB for web delivery.
 
 **This is illustrative b-roll, not footage of Al Jazeera Woodz's actual
-workshop.** Swap it for real footage the moment the company has any —
+workshop.**
+
+## One more licensed stock photo
+
+`public/images/wood-shingle-detail.jpg` — a traditional carved wood shingle
+facade (Gura Văii, Romania), real photography (not AI/rendered), added to
+the Material section's scroll strip on request. Pexels License, free
+commercial use, no attribution required. Source:
+`pexels.com/photo/wooden-architectural-panel-with-unique-design-34936774`
+(Maria M.). Same rule as everything else non-PDF: it's mood/texture
+imagery, not a claim about Al Jazeera Woodz's own work. Swap it for real footage the moment the company has any —
 `src/components/Hero.tsx` already falls back to the photo carousel (which
 *is* built entirely from the company's own PDF imagery) automatically on
 reduced-motion preference, data-saver connections, or if the video file
