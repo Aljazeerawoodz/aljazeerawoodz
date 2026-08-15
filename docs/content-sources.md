@@ -56,3 +56,22 @@ before this goes live:
 Extracted originals (all pages, unfiltered) are kept in `public/brand/` for
 reference; the curated subset actually used by the site lives in
 `public/images/`.
+
+## The hero background video
+
+`public/video/hero-joinery.mp4` (+ `hero-joinery-poster.jpg`) is **licensed
+stock footage from Pexels** — a craftsman measuring timber with a square
+ruler — selected and approved in this build's chat by the client, not
+generated. Pexels License: free for commercial use, no attribution
+required. Source: `pexels.com/video/measuring-wood-for-cutting-20184480`
+(Everett Bumstead). Downloaded once (~20MB, 2560×1440, 31s), then trimmed
+to 10s, downscaled to 1080p, stripped of audio, and re-encoded with ffmpeg
+to ~1MB for web delivery.
+
+**This is illustrative b-roll, not footage of Al Jazeera Woodz's actual
+workshop.** Swap it for real footage the moment the company has any —
+`src/components/Hero.tsx` already falls back to the photo carousel (which
+*is* built entirely from the company's own PDF imagery) automatically on
+reduced-motion preference, data-saver connections, or if the video file
+ever fails to load, so replacing/removing the video is a one-line change
+with no risk of a broken hero in the meantime.

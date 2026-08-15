@@ -12,6 +12,7 @@ import QualitySection from "@/components/QualitySection";
 import JournalSection from "@/components/JournalSection";
 import WhyUsSection from "@/components/WhyUsSection";
 import FinalCta from "@/components/FinalCta";
+import WoodGrainDivider from "@/components/WoodGrainDivider";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale: rawLocale } = await params;
@@ -35,6 +36,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   return (
     <>
       <Hero locale={locale} dictionary={dictionary} />
+      <div className="container-edit pt-14">
+        <WoodGrainDivider />
+      </div>
       <IntroStatement locale={locale} />
       <ServicesShowcase locale={locale} dictionary={dictionary} />
       <MaterialSection locale={locale} />

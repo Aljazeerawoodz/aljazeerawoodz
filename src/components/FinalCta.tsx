@@ -3,11 +3,13 @@ import type { Locale } from "@/i18n/locales";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { finalCta, contact } from "@/data/company";
 import Reveal from "./Reveal";
+import WoodGrainDivider from "./WoodGrainDivider";
 
 export default function FinalCta({ locale, dictionary }: { locale: Locale; dictionary: Dictionary }) {
   return (
     <section className="bg-charcoal py-28 text-warm sm:py-36">
       <div className="container-edit text-center">
+        <WoodGrainDivider className="mx-auto mb-10 max-w-xs opacity-70" />
         <Reveal>
           <h2 className="mx-auto max-w-3xl text-balance font-display text-4xl font-semibold leading-[1.1] sm:text-5xl lg:text-6xl">
             {finalCta[locale]}

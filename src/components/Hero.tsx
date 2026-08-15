@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
@@ -42,49 +42,105 @@ const slides = [
   },
 ];
 
+/**
+ * Hero background video — free stock footage (Pexels License, free for
+ * commercial use, no attribution required): a craftsman measuring timber
+ * with a square ruler. This is illustrative b-roll, NOT footage of Al
+ * Jazeera Woodz's own workshop — see docs/content-sources.md. Falls back
+ * to the photo carousel below on slow connections, reduced-motion
+ * preference, or if the video fails to load.
+ */
+const HERO_VIDEO_SRC = "/video/hero-joinery.mp4";
+const HERO_VIDEO_POSTER = "/video/hero-joinery-poster.jpg";
+
+function PhotoCarousel({ locale, active }: { locale: Locale; active: number }) {
+  const reduced = useReducedMotion();
+  return (
+    <div className="absolute inset-0">
+      {slides.map((slide, i) => (
+        <motion.div
+          key={slide.src}
+          className="absolute inset-0"
+          initial={false}
+          animate={{ opacity: active === i ? 1 : 0 }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
+        >
+          <motion.div
+            className="absolute inset-0"
+            initial={false}
+            animate={reduced ? { scale: 1 } : { scale: active === i ? 1.1 : 1 }}
+            transition={{ duration: active === i ? SLIDE_SECONDS + 1.2 : 0, ease: "linear" }}
+          >
+            <Image
+              src={slide.src}
+              alt={slide.alt[locale]}
+              fill
+              priority={i === 0}
+              sizes="100vw"
+              className="object-cover opacity-70"
+            />
+          </motion.div>
+        </motion.div>
+      ))}
+    </div>
+  );
+}
+
 export default function Hero({ locale, dictionary }: { locale: Locale; dictionary: Dictionary }) {
   const reduced = useReducedMotion();
   const [active, setActive] = useState(0);
+  const [videoFailed, setVideoFailed] = useState(false);
+  const [videoReady, setVideoReady] = useState(false);
+  const [saveData, setSaveData] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (reduced) return;
+    // Respect data-saver mode / very slow connections where a browser
+    // exposes it (Chromium-based browsers only — feature-detected).
+    const nav = navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } };
+    if (nav.connection?.saveData || nav.connection?.effectiveType === "slow-2g" || nav.connection?.effectiveType === "2g") {
+      setSaveData(true);
+    }
+  }, []);
+
+  const useVideo = !reduced && !videoFailed && !saveData;
+
+  useEffect(() => {
+    if (useVideo) return;
     const id = setInterval(() => setActive((v) => (v + 1) % slides.length), SLIDE_SECONDS * 1000);
     return () => clearInterval(id);
-  }, [reduced]);
+  }, [useVideo]);
 
   return (
     <section className="relative flex h-[100svh] min-h-[640px] w-full items-end overflow-hidden bg-charcoal">
-      {/* All slides stay mounted — only opacity + a slow Ken Burns zoom change.
-          Avoids re-fetching images on every crossfade. */}
-      <div className="absolute inset-0">
-        {slides.map((slide, i) => (
-          <motion.div
-            key={slide.src}
-            className="absolute inset-0"
-            initial={false}
-            animate={{ opacity: active === i ? 1 : 0 }}
-            transition={{ duration: 1.2, ease: "easeInOut" }}
+      {useVideo ? (
+        <>
+          <video
+            ref={videoRef}
+            className={`absolute inset-0 h-full w-full object-cover opacity-70 transition-opacity duration-700 ${videoReady ? "opacity-70" : "opacity-0"}`}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster={HERO_VIDEO_POSTER}
+            onCanPlay={() => setVideoReady(true)}
+            onError={() => setVideoFailed(true)}
           >
-            <motion.div
-              className="absolute inset-0"
-              initial={false}
-              animate={reduced ? { scale: 1 } : { scale: active === i ? 1.1 : 1 }}
-              transition={{ duration: active === i ? SLIDE_SECONDS + 1.2 : 0, ease: "linear" }}
-            >
-              <Image
-                src={slide.src}
-                alt={slide.alt[locale]}
-                fill
-                priority={i === 0}
-                sizes="100vw"
-                className="object-cover opacity-70"
-              />
-            </motion.div>
-          </motion.div>
-        ))}
-      </div>
-      {/* Cinematic vignette — darkens the edges so the crossfade reads as
-          "film" rather than a slideshow */}
+            <source src={HERO_VIDEO_SRC} type="video/mp4" />
+          </video>
+          {/* Poster shows instantly while the video buffers, so there's
+              never a blank charcoal flash on first paint. */}
+          {!videoReady ? (
+            <Image src={HERO_VIDEO_POSTER} alt="" fill priority sizes="100vw" className="absolute inset-0 object-cover opacity-70" />
+          ) : null}
+        </>
+      ) : (
+        <PhotoCarousel locale={locale} active={active} />
+      )}
+
+      {/* Cinematic vignette — darkens the edges so the visual reads as
+          "film" rather than a flat photo */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(0,0,0,0.45)_100%)]" />
       <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-charcoal/30" />
 
@@ -136,43 +192,49 @@ export default function Hero({ locale, dictionary }: { locale: Locale; dictionar
             </Link>
           </div>
 
-          {/* Slide captions / indicators — desktop only, keeps the mobile hero uncluttered */}
-          <div className="hidden items-center gap-4 sm:flex">
-            <AnimatePresence mode="wait">
-              <motion.span
-                key={slides[active]!.caption.en}
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -6 }}
-                transition={{ duration: 0.4 }}
-                className="text-sm text-warm/70"
-              >
-                {slides[active]!.caption[locale]}
-              </motion.span>
-            </AnimatePresence>
-            <div className="flex items-center gap-2">
-              {slides.map((slide, i) => (
-                <button
-                  key={slide.src}
-                  type="button"
-                  aria-label={`Slide ${i + 1}`}
-                  data-cursor-hover
-                  onClick={() => setActive(i)}
-                  className="relative h-1 w-8 overflow-hidden rounded-full bg-warm/25"
+          {useVideo ? (
+            <span className="hidden text-sm text-warm/70 sm:inline">
+              {locale === "ar" ? "نجارة دقيقة" : "Precision Joinery"}
+            </span>
+          ) : (
+            /* Slide captions / indicators — only relevant to the photo carousel fallback */
+            <div className="hidden items-center gap-4 sm:flex">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={slides[active]!.caption.en}
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -6 }}
+                  transition={{ duration: 0.4 }}
+                  className="text-sm text-warm/70"
                 >
-                  {i === active ? (
-                    <motion.span
-                      key={active}
-                      className="absolute inset-y-0 start-0 rounded-full bg-brass"
-                      initial={{ width: "0%" }}
-                      animate={{ width: "100%" }}
-                      transition={{ duration: reduced ? 0.01 : SLIDE_SECONDS, ease: "linear" }}
-                    />
-                  ) : null}
-                </button>
-              ))}
+                  {slides[active]!.caption[locale]}
+                </motion.span>
+              </AnimatePresence>
+              <div className="flex items-center gap-2">
+                {slides.map((slide, i) => (
+                  <button
+                    key={slide.src}
+                    type="button"
+                    aria-label={`Slide ${i + 1}`}
+                    data-cursor-hover
+                    onClick={() => setActive(i)}
+                    className="relative h-1 w-8 overflow-hidden rounded-full bg-warm/25"
+                  >
+                    {i === active ? (
+                      <motion.span
+                        key={active}
+                        className="absolute inset-y-0 start-0 rounded-full bg-brass"
+                        initial={{ width: "0%" }}
+                        animate={{ width: "100%" }}
+                        transition={{ duration: reduced ? 0.01 : SLIDE_SECONDS, ease: "linear" }}
+                      />
+                    ) : null}
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </motion.div>
       </div>
 
