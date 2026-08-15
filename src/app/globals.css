@@ -43,6 +43,12 @@
     @apply bg-brass/30 text-charcoal;
   }
 
+  /* The mobile nav already has its own "Start a Project" CTA — the floating
+     WhatsApp bubble would otherwise sit on top of it while the menu is open. */
+  body.mobile-menu-open .whatsapp-fab {
+    display: none;
+  }
+
   [dir="rtl"] .ltr-only {
     display: none;
   }

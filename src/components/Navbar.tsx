@@ -25,8 +25,10 @@ export default function Navbar({ locale, dictionary }: { locale: Locale; diction
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
+    document.body.classList.toggle("mobile-menu-open", open);
     return () => {
       document.body.style.overflow = "";
+      document.body.classList.remove("mobile-menu-open");
     };
   }, [open]);
 
@@ -112,7 +114,7 @@ export default function Navbar({ locale, dictionary }: { locale: Locale; diction
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 top-20 z-40 flex flex-col bg-charcoal px-6 py-10 lg:hidden"
+            className="fixed left-0 right-0 top-20 z-40 flex h-[calc(100dvh-5rem)] flex-col overflow-y-auto bg-charcoal px-6 py-10 lg:hidden"
           >
             <nav className="flex flex-1 flex-col justify-center gap-6">
               {links.map((link, i) => (
@@ -128,7 +130,7 @@ export default function Navbar({ locale, dictionary }: { locale: Locale; diction
                 </motion.div>
               ))}
             </nav>
-            <div className="flex items-center justify-between border-t border-warm/15 pt-6">
+            <div className="mt-6 flex shrink-0 items-center justify-between border-t border-warm/15 pt-6">
               <Link href={otherHref} onClick={() => setOpen(false)} className="text-warm/80">
                 {dictionary.common.languageSwitch}
               </Link>
