@@ -34,7 +34,10 @@ export default function MaterialSection({ locale }: { locale: Locale }) {
             className="object-cover"
           />
         </motion.div>
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/30 to-charcoal/50" />
+        {/* Darkens only the bottom where the heading sits and leaves the
+            top of the image clear — the previous version also washed the
+            top out in dark grey for no reason. */}
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/10 to-transparent" />
         <div className="container-edit relative z-10 flex h-full items-end pb-12">
           <motion.h2
             initial={{ opacity: 0, y: reduced ? 0 : 24 }}
@@ -48,7 +51,9 @@ export default function MaterialSection({ locale }: { locale: Locale }) {
         </div>
       </div>
 
-      <div className="no-scrollbar flex gap-6 overflow-x-auto ps-6 pe-6 sm:ps-16">
+      {/* Same padding scale as .container-edit so the strip's left edge
+          lines up with the heading above it instead of looking offset. */}
+      <div className="no-scrollbar flex gap-6 overflow-x-auto px-6 sm:px-10 lg:px-16">
         {strip.map((image, i) => (
           <motion.div
             key={image.src}
