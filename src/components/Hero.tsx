@@ -44,14 +44,14 @@ const slides = [
 
 /**
  * Hero background video — free stock footage (Pexels License, free for
- * commercial use, no attribution required): a craftsman measuring timber
- * with a square ruler. This is illustrative b-roll, NOT footage of Al
- * Jazeera Woodz's own workshop — see docs/content-sources.md. Falls back
- * to the photo carousel below on slow connections, reduced-motion
- * preference, or if the video fails to load.
+ * commercial use, no attribution required): a styled wood-panelled
+ * interior with warm candlelight. This is illustrative b-roll, NOT
+ * footage of Al Jazeera Woodz's own work — see docs/content-sources.md.
+ * Falls back to the photo carousel below on slow connections,
+ * reduced-motion preference, or if the video fails to load.
  */
-const HERO_VIDEO_SRC = "/video/hero-joinery.mp4";
-const HERO_VIDEO_POSTER = "/video/hero-joinery-poster.jpg";
+const HERO_VIDEO_SRC = "/video/hero-interior.mp4";
+const HERO_VIDEO_POSTER = "/video/hero-interior-poster.jpg";
 
 function PhotoCarousel({ locale, active }: { locale: Locale; active: number }) {
   const reduced = useReducedMotion();
@@ -194,7 +194,7 @@ export default function Hero({ locale, dictionary }: { locale: Locale; dictionar
 
           {useVideo ? (
             <div className="hidden w-44 flex-col gap-2 sm:flex">
-              <span className="text-sm text-warm/70">{locale === "ar" ? "نجارة دقيقة" : "Precision Joinery"}</span>
+              <span className="text-sm text-warm/70">{locale === "ar" ? "تصميم داخلي متقن" : "Crafted Interiors"}</span>
               <span className="relative h-px w-full bg-warm/20">
                 <motion.span
                   className="absolute top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-brass shadow-[0_0_0_4px_rgba(173,138,82,0.18)]"

@@ -59,17 +59,23 @@ reference; the curated subset actually used by the site lives in
 
 ## The hero background video
 
-`public/video/hero-joinery.mp4` (+ `hero-joinery-poster.jpg`) is **licensed
-stock footage from Pexels** — a craftsman measuring timber with a square
-ruler — selected and approved in this build's chat by the client, not
-generated. Pexels License: free for commercial use, no attribution
-required. Source: `pexels.com/video/measuring-wood-for-cutting-20184480`
-(Everett Bumstead). Downloaded once (~20MB, 2560×1440, 31s), then trimmed
-to 10s, downscaled to 1080p, stripped of audio, and re-encoded with ffmpeg
-to ~1MB for web delivery.
+`public/video/hero-interior.mp4` (+ `hero-interior-poster.jpg`) is
+**licensed stock footage from Pexels** — a styled, wood-panelled interior
+with warm candlelight — selected and approved in this build's chat by the
+client, not generated. Pexels License: free for commercial use, no
+attribution required. Source:
+`pexels.com/video/modern-wooden-house-interior-7749087`. Downloaded once
+(~43MB, 3840×2160, ~20s), then trimmed to 10s, downscaled to 1080p,
+stripped of audio, and re-encoded with ffmpeg to <1MB for web delivery.
 
-**This is illustrative b-roll, not footage of Al Jazeera Woodz's actual
-workshop.**
+An earlier version used a different clip (a craftsman measuring timber,
+`measuring-wood-for-cutting-20184480` by Everett Bumstead) — swapped out on
+request for something that reads as a finished interior rather than a
+workshop process shot. That original file has been removed from the repo;
+the same Pexels License terms applied to it.
+
+**Either way, this is illustrative b-roll, not footage of Al Jazeera
+Woodz's actual work.**
 
 ## One more licensed stock photo
 
