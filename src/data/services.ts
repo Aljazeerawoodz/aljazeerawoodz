@@ -25,8 +25,8 @@ export const services: Service[] = [
       en: ["Residential spaces", "Commercial interiors", "Turnkey fitout solutions", "Retail spaces", "Events & Exhibitions"],
       ar: ["المساحات السكنية", "التصاميم الداخلية التجارية", "حلول التجهيزات الجاهزة", "المساحات التجارية", "الفعاليات والمعارض"],
     },
-    image: "/images/interior-fitout.jpg",
-    imageAlt: { en: "Fitted interior seating and joinery detailing", ar: "تفاصيل تجهيزات داخلية ونجارة" },
+    image: "/images/wooden.jpg",
+    imageAlt: { en: "Sculptural wood wall detailing", ar: "تفاصيل جدارية خشبية منحوتة" },
   },
   {
     slug: "joinery",
