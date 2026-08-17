@@ -43,15 +43,18 @@ const slides = [
 ];
 
 /**
- * Hero background video — free stock footage (Pexels License, free for
- * commercial use, no attribution required): a styled wood-panelled
- * interior with warm candlelight. This is illustrative b-roll, NOT
- * footage of Al Jazeera Woodz's own work — see docs/content-sources.md.
- * Falls back to the photo carousel below on slow connections,
- * reduced-motion preference, or if the video fails to load.
+ * Hero background video — client-supplied file (public/video/hero-banner.mp4,
+ * re-encoded here as hero-banner-web.mp4: audio stripped, faststart flag
+ * added). Source/license unconfirmed as of this build — it has the visual
+ * signature of AI-generated video (a small sparkle/star mark, bottom-right,
+ * consistent across frames) rather than a real photographed space. Flagged
+ * to the client directly; swap or crop before production if that's
+ * confirmed — see docs/content-sources.md. Falls back to the photo
+ * carousel below on slow connections, reduced-motion preference, or if
+ * the video fails to load.
  */
-const HERO_VIDEO_SRC = "/video/hero-interior.mp4";
-const HERO_VIDEO_POSTER = "/video/hero-interior-poster.jpg";
+const HERO_VIDEO_SRC = "/video/hero-banner-web.mp4";
+const HERO_VIDEO_POSTER = "/video/hero-banner-poster.jpg";
 
 function PhotoCarousel({ locale, active }: { locale: Locale; active: number }) {
   const reduced = useReducedMotion();
