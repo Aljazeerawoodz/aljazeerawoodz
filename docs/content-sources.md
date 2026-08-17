@@ -60,9 +60,18 @@ reference; the curated subset actually used by the site lives in
 ## Hero, Material section, and Services page background videos
 
 Three **client-supplied files**, dropped directly into `public/video/` and
-wired in on request — re-encoded here only for the web (audio stripped,
+wired in on request — re-encoded here for the web (audio stripped,
 faststart flag added; originals kept alongside with matching non-`-web`
 names). Their original source/license is unconfirmed as of this build.
+
+The client's source files are natively 1280×720, which looks visibly soft
+stretched full-width on a normal desktop hero (confirmed by measuring: at
+a 1920px viewport the browser was upscaling ~1.5×). Re-encoded upscaled to
+1920×1080 with Lanczos scaling + a mild unsharp mask, at a lower CRF
+(20 vs. the original 25) for less compression softness — genuinely
+sharper, but each file is now ~4-6MB instead of ~1MB. Still not "real 4K
+detail" (that ceiling is set by the 720p source), just the sharpest this
+source material can reasonably look.
 
 - `middle-banner-web.mp4` → homepage hero (top banner) — an empty room
   with base cabinetry mid-install
