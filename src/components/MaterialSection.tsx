@@ -31,8 +31,11 @@ export default function MaterialSection({ locale }: { locale: Locale }) {
   const useVideo = !reduced && !videoFailed;
 
   return (
-    <section className="relative overflow-hidden bg-charcoal py-28 text-warm sm:py-36">
-      {/* Full-bleed featured moment — a scroll parallax for depth either way. */}
+    <section className="relative overflow-hidden bg-charcoal pb-28 text-warm sm:pb-36">
+      {/* Full-bleed featured moment — flush with the top of the section
+          (no padding above it) so the video/image fills edge-to-edge
+          instead of sitting below a solid-colour bar. Scroll parallax
+          for depth either way. */}
       <div ref={featureRef} className="relative mb-16 h-[62vh] min-h-[420px] w-full overflow-hidden sm:mb-20">
         <motion.div style={{ y }} className="absolute left-0 right-0 -top-16 -bottom-16">
           {useVideo ? (
