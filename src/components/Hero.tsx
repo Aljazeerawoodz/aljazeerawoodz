@@ -193,9 +193,16 @@ export default function Hero({ locale, dictionary }: { locale: Locale; dictionar
           </div>
 
           {useVideo ? (
-            <span className="hidden text-sm text-warm/70 sm:inline">
-              {locale === "ar" ? "نجارة دقيقة" : "Precision Joinery"}
-            </span>
+            <div className="hidden w-44 flex-col gap-2 sm:flex">
+              <span className="text-sm text-warm/70">{locale === "ar" ? "نجارة دقيقة" : "Precision Joinery"}</span>
+              <span className="relative h-px w-full bg-warm/20">
+                <motion.span
+                  className="absolute top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-brass shadow-[0_0_0_4px_rgba(173,138,82,0.18)]"
+                  animate={reduced ? { left: "0%" } : { left: ["0%", "calc(100% - 6px)", "0%"] }}
+                  transition={reduced ? undefined : { duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                />
+              </span>
+            </div>
           ) : (
             /* Slide captions / indicators — only relevant to the photo carousel fallback */
             <div className="hidden items-center gap-4 sm:flex">
