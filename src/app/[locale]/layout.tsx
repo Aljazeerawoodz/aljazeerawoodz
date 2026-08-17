@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter, Cairo, Baloo_2 } from "next/font/google";
+import { Playfair_Display, Inter, Cairo, Dancing_Script } from "next/font/google";
 import { notFound } from "next/navigation";
 import { locales, isLocale, dir, type Locale } from "@/i18n/locales";
 import { getDictionary } from "@/i18n/dictionaries";
@@ -32,12 +32,13 @@ const arabic = Cairo({
   display: "swap",
 });
 
-/** Bold, rounded wordmark/tagline font — used for the hero headline and
-    brand mark, per the client's reference (a chunky rounded sans). */
-const brandFont = Baloo_2({
+/** Script accent font for tagline moments ("Any Wood, Any Design") — matches
+    the cursive style on the client's carved wood sign. Used sparingly, not
+    for body/heading text. */
+const script = Dancing_Script({
   subsets: ["latin"],
-  weight: ["600", "700", "800"],
-  variable: "--font-brand",
+  weight: ["600", "700"],
+  variable: "--font-script",
   display: "swap",
 });
 
@@ -69,7 +70,7 @@ export default async function LocaleLayout({
     <div
       lang={locale}
       dir={direction}
-      className={`${display.variable} ${sans.variable} ${arabic.variable} ${brandFont.variable} has-custom-cursor min-h-screen bg-warm font-sans text-charcoal`}
+      className={`${display.variable} ${sans.variable} ${arabic.variable} ${script.variable} has-custom-cursor min-h-screen bg-warm font-sans text-charcoal`}
       style={locale === "ar" ? ({ "--font-display": "var(--font-arabic)", "--font-sans": "var(--font-arabic)" } as React.CSSProperties) : undefined}
     >
       <HtmlAttributes locale={locale} />

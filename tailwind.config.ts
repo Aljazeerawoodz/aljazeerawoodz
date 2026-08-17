@@ -30,7 +30,10 @@ const config: Config = {
         display: ["var(--font-display)", "serif"],
         sans: ["var(--font-sans)", "sans-serif"],
         arabic: ["var(--font-arabic)", "sans-serif"],
-        brand: ["var(--font-brand)", "var(--font-arabic)", "sans-serif"],
+        /** Script accent for tagline moments only — not applied in Arabic
+            (no Latin-script cursive equivalent), falls back to the
+            display serif for RTL. */
+        script: ["var(--font-script)", "var(--font-display)", "cursive"],
       },
       letterSpacing: {
         widest2: "0.28em",

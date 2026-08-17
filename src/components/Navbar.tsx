@@ -56,7 +56,7 @@ export default function Navbar({ locale, dictionary }: { locale: Locale; diction
       <div className="container-edit flex h-20 items-center justify-between">
         <Link href={`/${locale}`} className="flex items-center gap-3" data-cursor-hover>
           <Image src="/brand/logo-mark.png" alt={brand.name.en} width={36} height={36} className="h-9 w-9 rounded-full" priority />
-          <span className={`font-brand text-lg font-bold tracking-tight ${transparent ? "text-warm" : "text-charcoal"}`}>
+          <span className={`font-display text-lg font-semibold tracking-tight ${transparent ? "text-warm" : "text-charcoal"}`}>
             {brand.name[locale]}
           </span>
         </Link>

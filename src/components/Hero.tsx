@@ -157,7 +157,7 @@ export default function Hero({ locale, dictionary }: { locale: Locale; dictionar
           {locale === "ar" ? "تشطيبات داخلية · نجارة · أثاث مخصص" : "Interior Fitout · Joinery · Custom Furniture"}
         </motion.p>
 
-        <h1 className="font-brand font-extrabold leading-[0.95] text-warm">
+        <h1 className="font-display font-semibold leading-[0.95] text-warm">
           {lines[locale].map((line, i) => (
             <span key={line} className="block overflow-hidden">
               <motion.span

@@ -16,9 +16,9 @@ export default function Footer({ locale, dictionary }: { locale: Locale; diction
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href={`/${locale}`} className="flex items-center gap-3">
               <Image src="/brand/logo-mark.png" alt={brand.name.en} width={40} height={40} className="h-10 w-10 rounded-full" />
-              <span className="font-brand text-xl font-bold text-charcoal">{brand.name[locale]}</span>
+              <span className="font-display text-xl font-semibold text-charcoal">{brand.name[locale]}</span>
             </Link>
-            <p className="mt-4 max-w-xs text-charcoal/70">{dictionary.footer.tagline}</p>
+            <p className="font-script mt-4 max-w-xs text-xl text-charcoal/70">{dictionary.footer.tagline}</p>
             <div className="mt-6 flex items-center gap-4">
               <a href={contact.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-charcoal/60 hover:text-teal">
                 <Instagram className="h-5 w-5" />

@@ -22,8 +22,8 @@ export const services: Service[] = [
       ar: "نقدم حلولاً متكاملة للتجهيزات الداخلية للمساحات السكنية والتجارية على حد سواء. بدءًا من التخطيط الأولي للمخطط وحتى التنفيذ النهائي، يظل التركيز منصبًا على خلق بيئات عملية ومنظمة جيدًا ومتوازنة بصريًا.",
     },
     capabilities: {
-      en: ["Residential spaces", "Commercial interiors", "Turnkey fitout solutions", "Retail spaces", "Events & Exhibitions"],
-      ar: ["المساحات السكنية", "التصاميم الداخلية التجارية", "حلول التجهيزات الجاهزة", "المساحات التجارية", "الفعاليات والمعارض"],
+      en: ["Residential spaces", "Commercial interiors", "Turnkey fitout solutions", "Retail spaces", "Events & Exhibitions", "Kiosk works"],
+      ar: ["المساحات السكنية", "التصاميم الداخلية التجارية", "حلول التجهيزات الجاهزة", "المساحات التجارية", "الفعاليات والمعارض", "أعمال الأكشاك"],
     },
     image: "/images/wooden.jpg",
     imageAlt: { en: "Sculptural wood wall detailing", ar: "تفاصيل جدارية خشبية منحوتة" },
