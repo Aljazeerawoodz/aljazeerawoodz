@@ -34,10 +34,10 @@ export default function MaterialSection({ locale }: { locale: Locale }) {
     <section className="relative overflow-hidden bg-charcoal py-28 text-warm sm:py-36">
       {/* Full-bleed featured moment — a scroll parallax for depth either way. */}
       <div ref={featureRef} className="relative mb-16 h-[62vh] min-h-[420px] w-full overflow-hidden sm:mb-20">
-        <motion.div style={{ y }} className="absolute inset-0 -top-16 -bottom-16">
+        <motion.div style={{ y }} className="absolute left-0 right-0 -top-16 -bottom-16">
           {useVideo ? (
             <video
-              className="h-full w-full object-cover"
+              className="absolute inset-0 h-full w-full object-cover"
               autoPlay
               muted
               loop
