@@ -52,7 +52,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
                 data-cursor-hover
                 className="group grid grid-cols-1 items-center gap-8 border-t border-charcoal/10 py-12 last:border-b sm:grid-cols-[auto_1fr_auto] sm:gap-12"
               >
-                <span className="font-display text-2xl text-brass">{service.number}</span>
+                <span className="font-display text-2xl text-teal">{service.number}</span>
                 <div className="flex items-center gap-8">
                   <div className="relative hidden h-24 w-32 shrink-0 overflow-hidden rounded-sm sm:block">
                     <Image src={service.image} alt={service.imageAlt[locale]} fill sizes="140px" className="object-cover transition-transform duration-700 group-hover:scale-105" />
@@ -62,7 +62,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
                     <p className="mt-2 max-w-lg text-charcoal/65">{service.intro[locale]}</p>
                   </div>
                 </div>
-                <ArrowUpRight className="h-7 w-7 shrink-0 justify-self-end text-charcoal/40 transition-all duration-300 ease-editorial group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-brass rtl:-scale-x-100" />
+                <ArrowUpRight className="h-7 w-7 shrink-0 justify-self-end text-charcoal/40 transition-all duration-300 ease-editorial group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-teal rtl:-scale-x-100" />
               </Link>
             </Reveal>
           ))}

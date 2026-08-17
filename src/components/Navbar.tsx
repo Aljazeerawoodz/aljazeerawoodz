@@ -56,7 +56,7 @@ export default function Navbar({ locale, dictionary }: { locale: Locale; diction
       <div className="container-edit flex h-20 items-center justify-between">
         <Link href={`/${locale}`} className="flex items-center gap-3" data-cursor-hover>
           <Image src="/brand/logo-mark.png" alt={brand.name.en} width={36} height={36} className="h-9 w-9 rounded-full" priority />
-          <span className={`font-display text-lg font-semibold tracking-tight ${transparent ? "text-warm" : "text-charcoal"}`}>
+          <span className={`font-brand text-lg font-bold tracking-tight ${transparent ? "text-warm" : "text-charcoal"}`}>
             {brand.name[locale]}
           </span>
         </Link>
@@ -67,7 +67,7 @@ export default function Navbar({ locale, dictionary }: { locale: Locale; diction
               key={link.href}
               href={link.href}
               data-cursor-hover
-              className={`text-sm font-medium tracking-wide transition-colors hover:text-brass ${
+              className={`text-sm font-medium tracking-wide transition-colors hover:text-teal ${
                 transparent ? "text-warm/90" : "text-charcoal/80"
               }`}
             >
@@ -146,7 +146,7 @@ export default function Navbar({ locale, dictionary }: { locale: Locale; diction
               <Link
                 href={`/${locale}/contact`}
                 onClick={() => setOpen(false)}
-                className="rounded-full bg-brass px-5 py-2.5 text-sm font-medium text-charcoal"
+                className="rounded-full bg-teal px-5 py-2.5 text-sm font-medium text-charcoal"
               >
                 {dictionary.nav.cta}
               </Link>

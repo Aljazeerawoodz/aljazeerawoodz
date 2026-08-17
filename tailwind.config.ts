@@ -19,15 +19,18 @@ const config: Config = {
           DEFAULT: "#7c5a3a",
           dark: "#4a3524",
         },
-        brass: {
-          DEFAULT: "#ad8a52",
-          soft: "#cbb187",
+        /* Sampled directly from the brand logo mark (public/brand/logo-mark.png) */
+        teal: {
+          DEFAULT: "#2B7089",
+          dark: "#1F4A5E",
+          soft: "#7FB3C4",
         },
       },
       fontFamily: {
         display: ["var(--font-display)", "serif"],
         sans: ["var(--font-sans)", "sans-serif"],
         arabic: ["var(--font-arabic)", "sans-serif"],
+        brand: ["var(--font-brand)", "var(--font-arabic)", "sans-serif"],
       },
       letterSpacing: {
         widest2: "0.28em",

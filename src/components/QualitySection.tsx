@@ -22,7 +22,7 @@ export default function QualitySection({ locale }: { locale: Locale; dictionary:
         <div className="grid grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2">
           {quality.map((point, i) => (
             <Reveal key={point.title.en} delay={i * 0.08}>
-              <span className="font-display text-3xl text-brass">0{i + 1}</span>
+              <span className="font-display text-3xl text-teal">0{i + 1}</span>
               <h3 className="mt-4 font-display text-xl text-charcoal">{point.title[locale]}</h3>
               <p className="mt-3 text-charcoal/70">{point.body[locale]}</p>
             </Reveal>

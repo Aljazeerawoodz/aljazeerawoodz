@@ -27,7 +27,7 @@ export default function ProcessTimeline({ locale, dictionary }: { locale: Locale
               >
                 <div className="h-1 w-full rounded-full bg-charcoal/10">
                   <div
-                    className={`h-1 rounded-full bg-brass transition-all duration-500 ease-editorial ${
+                    className={`h-1 rounded-full bg-teal transition-all duration-500 ease-editorial ${
                       active >= i ? "w-full" : "w-0"
                     }`}
                   />
@@ -47,8 +47,8 @@ export default function ProcessTimeline({ locale, dictionary }: { locale: Locale
         {/* Mobile vertical */}
         <div className="mt-12 flex flex-col gap-8 lg:hidden">
           {process.map((step) => (
-            <div key={step.number} className="border-s-2 border-brass ps-6">
-              <span className="font-display text-3xl text-brass">{step.number}</span>
+            <div key={step.number} className="border-s-2 border-teal ps-6">
+              <span className="font-display text-3xl text-teal">{step.number}</span>
               <h3 className="mt-2 font-display text-xl text-charcoal">{step.title[locale]}</h3>
               <p className="mt-2 text-charcoal/70">{step.body[locale]}</p>
             </div>

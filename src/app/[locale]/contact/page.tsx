@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: locale === "ar" ? "تواصل معنا" : "Contact",
     description:
       locale === "ar"
-        ? "تواصلوا مع الجزيرة وودز لمناقشة مشروعكم القادم في التشطيبات الداخلية أو النجارة أو الأثاث المخصص."
-        : "Get in touch with Al Jazeera Woodz to discuss your next interior fitout, joinery, or custom furniture project.",
+        ? "تواصلوا مع الجزيرة للأعمال الخشبية لمناقشة مشروعكم القادم في التشطيبات الداخلية أو النجارة أو الأثاث المخصص."
+        : "Get in touch with Al Jazeera Wooden Works to discuss your next interior fitout, joinery, or custom furniture project.",
   });
 }
 
@@ -45,24 +45,24 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
           <p className="eyebrow mb-6">{dictionary.footer.contactHeading}</p>
           <ul className="space-y-6 text-charcoal/80">
             <li className="flex items-start gap-3">
-              <Phone className="mt-1 h-5 w-5 shrink-0 text-brass" />
+              <Phone className="mt-1 h-5 w-5 shrink-0 text-teal" />
               <div dir="ltr" className="text-start">
                 {contact.phones.map((phone) => (
-                  <a key={phone} href={`tel:${phone.replace(/\s/g, "")}`} className="block hover:text-brass">
+                  <a key={phone} href={`tel:${phone.replace(/\s/g, "")}`} className="block hover:text-teal">
                     {phone}
                   </a>
                 ))}
               </div>
             </li>
             <li className="flex items-start gap-3">
-              <Mail className="mt-1 h-5 w-5 shrink-0 text-brass" />
-              <a href={`mailto:${contact.email}`} dir="ltr" className="hover:text-brass">
+              <Mail className="mt-1 h-5 w-5 shrink-0 text-teal" />
+              <a href={`mailto:${contact.email}`} dir="ltr" className="hover:text-teal">
                 {contact.email}
               </a>
             </li>
             <li className="flex items-start gap-3">
-              <MapPin className="mt-1 h-5 w-5 shrink-0 text-brass" />
-              <span>{contact.location[locale]}</span>
+              <MapPin className="mt-1 h-5 w-5 shrink-0 text-teal" />
+              <span>{contact.address[locale]}</span>
             </li>
           </ul>
 

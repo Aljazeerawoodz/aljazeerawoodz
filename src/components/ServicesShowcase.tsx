@@ -32,7 +32,7 @@ export default function ServicesShowcase({ locale, dictionary }: { locale: Local
                 className="group flex items-center justify-between gap-6 py-8"
               >
                 <div className="flex items-baseline gap-6">
-                  <span className="font-display text-lg text-brass">{service.number}</span>
+                  <span className="font-display text-lg text-teal">{service.number}</span>
                   <span
                     className={`whitespace-pre-line font-display text-3xl transition-colors xl:text-4xl ${
                       active === i ? "text-charcoal" : "text-charcoal/40"
@@ -43,7 +43,7 @@ export default function ServicesShowcase({ locale, dictionary }: { locale: Local
                 </div>
                 <ArrowUpRight
                   className={`h-7 w-7 shrink-0 transition-all duration-300 ease-editorial ${
-                    active === i ? "translate-x-1 -translate-y-1 text-brass opacity-100" : "opacity-0"
+                    active === i ? "translate-x-1 -translate-y-1 text-teal opacity-100" : "opacity-0"
                   } rtl:-scale-x-100`}
                 />
               </Link>
@@ -88,7 +88,7 @@ export default function ServicesShowcase({ locale, dictionary }: { locale: Local
                 className="flex w-full items-center justify-between gap-4 py-6 text-start"
               >
                 <span className="flex items-baseline gap-4">
-                  <span className="font-display text-brass">{service.number}</span>
+                  <span className="font-display text-teal">{service.number}</span>
                   <span className="font-display text-2xl">{service.shortTitle[locale].replace("\n", " ")}</span>
                 </span>
                 <Plus className={`h-5 w-5 shrink-0 transition-transform ${isOpen ? "rotate-45" : ""}`} />
@@ -106,7 +106,7 @@ export default function ServicesShowcase({ locale, dictionary }: { locale: Local
                       <Image src={service.image} alt={service.imageAlt[locale]} fill className="object-cover" />
                     </div>
                     <p className="mb-6 text-charcoal/70">{service.intro[locale]}</p>
-                    <Link href={`/${locale}/services/${service.slug}`} className="text-sm font-medium text-brass underline underline-offset-4">
+                    <Link href={`/${locale}/services/${service.slug}`} className="text-sm font-medium text-teal underline underline-offset-4">
                       {dictionary.common.viewAll}
                     </Link>
                     <div className="h-6" />

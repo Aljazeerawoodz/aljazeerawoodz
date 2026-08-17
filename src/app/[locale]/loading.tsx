@@ -9,10 +9,10 @@ export default function Loading() {
     <div className="fixed inset-0 z-[90] flex items-center justify-center bg-warm">
       <div className="flex flex-col items-center gap-4">
         <span className="relative flex h-12 w-12 items-center justify-center">
-          <span className="absolute h-full w-full animate-ping rounded-full bg-brass/40" />
-          <span className="relative h-8 w-8 animate-pulse rounded-full bg-brass" />
+          <span className="absolute h-full w-full animate-ping rounded-full bg-teal/40" />
+          <span className="relative h-8 w-8 animate-pulse rounded-full bg-teal" />
         </span>
-        <span className="eyebrow text-charcoal/60">Al Jazeera Woodz</span>
+        <span className="eyebrow text-charcoal/60">Al Jazeera Wooden Works</span>
       </div>
     </div>
   );

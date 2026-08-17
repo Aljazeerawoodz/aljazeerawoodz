@@ -54,8 +54,8 @@ export default function ProjectsGrid({ locale, dictionary }: { locale: Locale; d
           </p>
           <p className="mt-4 max-w-md text-charcoal/60">
             {locale === "ar"
-              ? "سيتم نشر مشاريع الجزيرة وودز الحقيقية هنا فور توفر الصور والتفاصيل. تواصلوا معنا لمناقشة مشروعكم القادم."
-              : "Real Al Jazeera Woodz project photography will appear here as it becomes available. Get in touch to discuss what we could build for your space."}
+              ? "سيتم نشر مشاريع الجزيرة للأعمال الخشبية الحقيقية هنا فور توفر الصور والتفاصيل. تواصلوا معنا لمناقشة مشروعكم القادم."
+              : "Real Al Jazeera Wooden Works project photography will appear here as it becomes available. Get in touch to discuss what we could build for your space."}
           </p>
           <Link href={`/${locale}/contact`} className="mt-8 rounded-full bg-charcoal px-7 py-3.5 text-sm font-medium text-warm">
             {dictionary.nav.cta}
@@ -68,7 +68,7 @@ export default function ProjectsGrid({ locale, dictionary }: { locale: Locale; d
               <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
                 <Image src={project.coverImage} alt={project.title[locale]} fill sizes="33vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
-              <p className="mt-4 font-display text-xl text-charcoal group-hover:text-brass">{project.title[locale]}</p>
+              <p className="mt-4 font-display text-xl text-charcoal group-hover:text-teal">{project.title[locale]}</p>
               <p className="text-sm text-charcoal/60">{project.location[locale]}</p>
             </Link>
           ))}

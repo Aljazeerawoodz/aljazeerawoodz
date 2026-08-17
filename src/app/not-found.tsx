@@ -19,12 +19,12 @@ export default function GlobalNotFound() {
         textAlign: "center",
       }}
     >
-      <p style={{ letterSpacing: "0.28em", textTransform: "uppercase", fontSize: 12, color: "#ad8a52", marginBottom: 16 }}>
-        Al Jazeera Woodz
+      <p style={{ letterSpacing: "0.28em", textTransform: "uppercase", fontSize: 12, color: "#2B7089", marginBottom: 16 }}>
+        Al Jazeera Wooden Works
       </p>
       <h1 style={{ fontSize: 32, marginBottom: 12 }}>Page not found</h1>
       {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-      <a href="/en" style={{ color: "#ad8a52", textDecoration: "underline" }}>
+      <a href="/en" style={{ color: "#2B7089", textDecoration: "underline" }}>
         Return home
       </a>
     </div>

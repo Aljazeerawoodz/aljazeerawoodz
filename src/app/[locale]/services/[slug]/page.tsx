@@ -52,7 +52,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
             <ul className="mt-8 space-y-4">
               {service.capabilities[locale].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-lg text-charcoal/75">
-                  <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-brass" />
+                  <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-teal" />
                   {item}
                 </li>
               ))}
@@ -79,7 +79,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {process.map((step) => (
               <div key={step.number}>
-                <span className="font-display text-2xl text-brass">{step.number}</span>
+                <span className="font-display text-2xl text-teal">{step.number}</span>
                 <h3 className="mt-3 font-display text-lg text-charcoal">{step.title[locale]}</h3>
                 <p className="mt-2 text-sm text-charcoal/65">{step.body[locale]}</p>
               </div>
@@ -96,7 +96,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
               <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
                 <Image src={s.image} alt={s.imageAlt[locale]} fill sizes="30vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
-              <p className="mt-4 font-display text-xl text-charcoal group-hover:text-brass">{s.title[locale]}</p>
+              <p className="mt-4 font-display text-xl text-charcoal group-hover:text-teal">{s.title[locale]}</p>
             </Link>
           ))}
         </div>

@@ -16,17 +16,17 @@ export default function Footer({ locale, dictionary }: { locale: Locale; diction
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href={`/${locale}`} className="flex items-center gap-3">
               <Image src="/brand/logo-mark.png" alt={brand.name.en} width={40} height={40} className="h-10 w-10 rounded-full" />
-              <span className="font-display text-xl font-semibold text-charcoal">{brand.name[locale]}</span>
+              <span className="font-brand text-xl font-bold text-charcoal">{brand.name[locale]}</span>
             </Link>
             <p className="mt-4 max-w-xs text-charcoal/70">{dictionary.footer.tagline}</p>
             <div className="mt-6 flex items-center gap-4">
-              <a href={contact.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-charcoal/60 hover:text-brass">
+              <a href={contact.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-charcoal/60 hover:text-teal">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href={contact.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-charcoal/60 hover:text-brass">
+              <a href={contact.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-charcoal/60 hover:text-teal">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href={contact.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-charcoal/60 hover:text-brass">
+              <a href={contact.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-charcoal/60 hover:text-teal">
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>
@@ -35,10 +35,10 @@ export default function Footer({ locale, dictionary }: { locale: Locale; diction
           <div>
             <p className="eyebrow mb-5">{dictionary.footer.navigation}</p>
             <ul className="space-y-3 text-charcoal/75">
-              <li><Link href={`/${locale}/about`} className="hover:text-brass">{dictionary.nav.about}</Link></li>
-              <li><Link href={`/${locale}/projects`} className="hover:text-brass">{dictionary.nav.projects}</Link></li>
-              <li><Link href={`/${locale}/blog`} className="hover:text-brass">{dictionary.nav.journal}</Link></li>
-              <li><Link href={`/${locale}/contact`} className="hover:text-brass">{dictionary.nav.contact}</Link></li>
+              <li><Link href={`/${locale}/about`} className="hover:text-teal">{dictionary.nav.about}</Link></li>
+              <li><Link href={`/${locale}/projects`} className="hover:text-teal">{dictionary.nav.projects}</Link></li>
+              <li><Link href={`/${locale}/blog`} className="hover:text-teal">{dictionary.nav.journal}</Link></li>
+              <li><Link href={`/${locale}/contact`} className="hover:text-teal">{dictionary.nav.contact}</Link></li>
             </ul>
           </div>
 
@@ -47,7 +47,7 @@ export default function Footer({ locale, dictionary }: { locale: Locale; diction
             <ul className="space-y-3 text-charcoal/75">
               {services.map((s) => (
                 <li key={s.slug}>
-                  <Link href={`/${locale}/services/${s.slug}`} className="hover:text-brass">
+                  <Link href={`/${locale}/services/${s.slug}`} className="hover:text-teal">
                     {s.title[locale]}
                   </Link>
                 </li>
@@ -64,7 +64,7 @@ export default function Footer({ locale, dictionary }: { locale: Locale; diction
               </li>
               <li className="flex items-start gap-2">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0" />
-                <a href={`mailto:${contact.email}`} className="hover:text-brass" dir="ltr">
+                <a href={`mailto:${contact.email}`} className="hover:text-teal" dir="ltr">
                   {contact.email}
                 </a>
               </li>
@@ -81,8 +81,8 @@ export default function Footer({ locale, dictionary }: { locale: Locale; diction
             © {year} {brand.name[locale]}. {dictionary.footer.rights}
           </p>
           <div className="flex gap-6">
-            <span className="cursor-default">{dictionary.footer.privacy}</span>
-            <span className="cursor-default">{dictionary.footer.terms}</span>
+            <Link href={`/${locale}/privacy`} className="hover:text-teal">{dictionary.footer.privacy}</Link>
+            <Link href={`/${locale}/terms`} className="hover:text-teal">{dictionary.footer.terms}</Link>
           </div>
         </div>
       </div>

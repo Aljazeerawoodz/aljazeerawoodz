@@ -15,8 +15,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: locale === "ar" ? "المشاريع" : "Projects",
     description:
       locale === "ar"
-        ? "معرض مشاريع الجزيرة وودز في التشطيبات الداخلية والنجارة والأثاث المخصص."
-        : "A portfolio of Al Jazeera Woodz work across interior fitout, joinery and custom furniture.",
+        ? "معرض مشاريع الجزيرة للأعمال الخشبية في التشطيبات الداخلية والنجارة والأثاث المخصص."
+        : "A portfolio of Al Jazeera Wooden Works work across interior fitout, joinery and custom furniture.",
   });
 }
 

@@ -157,7 +157,7 @@ export default function Hero({ locale, dictionary }: { locale: Locale; dictionar
           {locale === "ar" ? "تشطيبات داخلية · نجارة · أثاث مخصص" : "Interior Fitout · Joinery · Custom Furniture"}
         </motion.p>
 
-        <h1 className="font-display font-semibold leading-[0.95] text-warm">
+        <h1 className="font-brand font-extrabold leading-[0.95] text-warm">
           {lines[locale].map((line, i) => (
             <span key={line} className="block overflow-hidden">
               <motion.span
@@ -200,7 +200,7 @@ export default function Hero({ locale, dictionary }: { locale: Locale; dictionar
               <span className="text-sm text-warm/70">{locale === "ar" ? "تصميم داخلي متقن" : "Crafted Interiors"}</span>
               <span className="relative h-px w-full bg-warm/20">
                 <motion.span
-                  className="absolute top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-brass shadow-[0_0_0_4px_rgba(173,138,82,0.18)]"
+                  className="absolute top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-teal shadow-[0_0_0_4px_rgba(173,138,82,0.18)]"
                   animate={reduced ? { left: "0%" } : { left: ["0%", "calc(100% - 6px)", "0%"] }}
                   transition={reduced ? undefined : { duration: 5, repeat: Infinity, ease: "easeInOut" }}
                 />
@@ -234,7 +234,7 @@ export default function Hero({ locale, dictionary }: { locale: Locale; dictionar
                     {i === active ? (
                       <motion.span
                         key={active}
-                        className="absolute inset-y-0 start-0 rounded-full bg-brass"
+                        className="absolute inset-y-0 start-0 rounded-full bg-teal"
                         initial={{ width: "0%" }}
                         animate={{ width: "100%" }}
                         transition={{ duration: reduced ? 0.01 : SLIDE_SECONDS, ease: "linear" }}

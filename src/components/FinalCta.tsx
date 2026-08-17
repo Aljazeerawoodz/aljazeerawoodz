@@ -19,7 +19,7 @@ export default function FinalCta({ locale, dictionary }: { locale: Locale; dicti
           <Link
             href={`/${locale}/contact`}
             data-cursor-hover
-            className="rounded-full bg-brass px-8 py-4 text-sm font-medium text-charcoal transition-transform hover:scale-[1.03]"
+            className="rounded-full bg-teal px-8 py-4 text-sm font-medium text-charcoal transition-transform hover:scale-[1.03]"
           >
             {dictionary.common.startProject}
           </Link>

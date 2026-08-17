@@ -5,7 +5,7 @@ import { services } from "@/data/services";
 import { articles } from "@/data/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticPaths = ["", "/about", "/services", "/projects", "/blog", "/contact"];
+  const staticPaths = ["", "/about", "/services", "/projects", "/blog", "/contact", "/privacy", "/terms"];
   const servicePaths = services.map((s) => `/services/${s.slug}`);
   const blogPaths = articles.map((a) => `/blog/${a.slug}`);
 

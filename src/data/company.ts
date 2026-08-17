@@ -1,7 +1,7 @@
 import type { Bi, BiList } from "./types";
 
 /**
- * Every fact below is sourced directly from the Al Jazeera Woodz company
+ * Every fact below is sourced directly from the Al Jazeera Wooden Works company
  * profile PDF (English + Arabic text as supplied by the company). Do not
  * add statistics, years of experience, staff counts, awards or client
  * names here unless they come from the company itself — see CLAUDE-style
@@ -9,7 +9,7 @@ import type { Bi, BiList } from "./types";
  */
 
 export const brand = {
-  name: { en: "Al Jazeera Woodz", ar: "الجزيرة وودز" } satisfies Bi,
+  name: { en: "Al Jazeera Wooden Works", ar: "الجزيرة للأعمال الخشبية" } satisfies Bi,
   legalName: { en: "Al Jazeera Wooden Works", ar: "الجزيرة للأعمال الخشبية" } satisfies Bi,
   tagline: { en: "Any Wood, Any Design", ar: "أي خشب، أي تصميم" } satisfies Bi,
   domain: "aljazeerawoodz.com",
@@ -20,6 +20,10 @@ export const contact = {
   whatsappNumber: "971569321000",
   email: "aljazeerawoodz@gmail.com",
   location: { en: "Ras Al Khaima, UAE", ar: "رأس الخيمة، الإمارات العربية المتحدة" } satisfies Bi,
+  address: {
+    en: "Units 1–4, Aljawis Street, Aljawis, Ras Al Khaimah, United Arab Emirates",
+    ar: "الوحدات 1-4، شارع الجويس، الجويس، رأس الخيمة، الإمارات العربية المتحدة",
+  } satisfies Bi,
   social: {
     instagram: "https://instagram.com/al_jazeera_woodz",
     facebook: "https://facebook.com/AlJazeeraWoodz",
@@ -27,9 +31,32 @@ export const contact = {
   },
 };
 
+/**
+ * Official trade license — Ras Al Khaimah Department of Economic
+ * Development (RAK DED). Sourced from the license document provided in
+ * chat; used on the Terms & Conditions page and available for the footer.
+ * Renewal/expiry dates are point-in-time facts as of that document — keep
+ * these in sync whenever the license is renewed.
+ */
+export const license = {
+  number: "34469",
+  legalForm: { en: "Civil Works Company", ar: "شركة أعمال مدنية" } satisfies Bi,
+  authority: { en: "Ras Al Khaimah Department of Economic Development (RAK DED)", ar: "دائرة التنمية الاقتصادية برأس الخيمة" } satisfies Bi,
+  establishedDate: "2011-03-06",
+  renewalDate: "2026-04-06",
+  expiryDate: "2027-03-22",
+  localRegistryNo: "40423",
+  cblsNo: "4010000000000034469",
+  cocMembershipNo: "H-38539-2011",
+  businessActivities: {
+    en: ["Tinging and Painting Works", "Carpenter shop", "Decor Works"],
+    ar: ["أعمال الطلاء والدهانات للمباني", "منجرة - ورش النجارة", "أعمال تنفيذ التصميم الداخلي - الديكور"],
+  } satisfies BiList,
+};
+
 export const whoWeAre: Bi = {
-  en: "Al Jazeera Woodz operates at the intersection of interior fitout, joinery, and custom furniture, delivering solutions across the UAE that are shaped around how spaces are actually used. The focus is not just on how things look, but on how well they perform over time. From detailed joinery to complete interior execution, every project is handled with a practical mindset and a strong sense of finishing. The approach remains consistent — clear planning, careful material selection, and work that feels complete in both function and appearance.",
-  ar: "تعمل الجزيرة وودز عند تقاطع التشطيبات الداخلية والنجارة والأثاث المصصم حسب الطلب، لتقديم حلول في جميع أنحاء الإمارات العربية المتحدة مصممة وفق الطريقة التي تُستخدم بها المساحات فعليًا. لا يقتصر تركيزنا على المظهر فحسب، بل يمتد إلى مدى الأداء والكفاءة على المدى البعيد. من أعمال النجارة الدقيقة إلى التنفيذ الداخلي الكامل، يُدار كل مشروع بعقلية عملية وإحساس راسخ بالإتقان. يبقى النهج ثابتًا دائمًا — تخطيط واضح، واختيار دقيق للمواد، وأعمال تبدو مكتملة في الوظيفة والمظهر معًا.",
+  en: "Al Jazeera Wooden Works operates at the intersection of interior fitout, joinery, and custom furniture, delivering solutions across the UAE that are shaped around how spaces are actually used. The focus is not just on how things look, but on how well they perform over time. From detailed joinery to complete interior execution, every project is handled with a practical mindset and a strong sense of finishing. The approach remains consistent — clear planning, careful material selection, and work that feels complete in both function and appearance.",
+  ar: "تعمل الجزيرة للأعمال الخشبية عند تقاطع التشطيبات الداخلية والنجارة والأثاث المصصم حسب الطلب، لتقديم حلول في جميع أنحاء الإمارات العربية المتحدة مصممة وفق الطريقة التي تُستخدم بها المساحات فعليًا. لا يقتصر تركيزنا على المظهر فحسب، بل يمتد إلى مدى الأداء والكفاءة على المدى البعيد. من أعمال النجارة الدقيقة إلى التنفيذ الداخلي الكامل، يُدار كل مشروع بعقلية عملية وإحساس راسخ بالإتقان. يبقى النهج ثابتًا دائمًا — تخطيط واضح، واختيار دقيق للمواد، وأعمال تبدو مكتملة في الوظيفة والمظهر معًا.",
 };
 
 export const introStatement: Bi = {
@@ -38,8 +65,8 @@ export const introStatement: Bi = {
 };
 
 export const introBody: Bi = {
-  en: "Al Jazeera Woodz combines practical design thinking, careful material selection, and hands-on craftsmanship across interior fitout, joinery, and custom furniture — with structured execution from first sketch to final handover.",
-  ar: "تجمع الجزيرة وودز بين التفكير التصميمي العملي، والاختيار الدقيق للمواد، والحرفية اليدوية عبر التشطيبات الداخلية والنجارة والأثاث المصمم حسب الطلب — مع تنفيذ منظم من أول رسم حتى التسليم النهائي.",
+  en: "Al Jazeera Wooden Works combines practical design thinking, careful material selection, and hands-on craftsmanship across interior fitout, joinery, and custom furniture — with structured execution from first sketch to final handover.",
+  ar: "تجمع الجزيرة للأعمال الخشبية بين التفكير التصميمي العملي، والاختيار الدقيق للمواد، والحرفية اليدوية عبر التشطيبات الداخلية والنجارة والأثاث المصمم حسب الطلب — مع تنفيذ منظم من أول رسم حتى التسليم النهائي.",
 };
 
 export interface StoryStage {
@@ -77,8 +104,8 @@ export const story: StoryStage[] = [
     number: "04",
     title: { en: "Today", ar: "اليوم" },
     body: {
-      en: "Al Jazeera Woodz continues to operate with a balanced approach, combining traditional craftsmanship with structured project execution.",
-      ar: "تواصل الجزيرة وودز العمل بنهج متوازن، يجمع بين الحرفية التقليدية والتنفيذ المنظم للمشاريع.",
+      en: "Al Jazeera Wooden Works continues to operate with a balanced approach, combining traditional craftsmanship with structured project execution.",
+      ar: "تواصل الجزيرة للأعمال الخشبية العمل بنهج متوازن، يجمع بين الحرفية التقليدية والتنفيذ المنظم للمشاريع.",
     },
   },
 ];

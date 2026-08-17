@@ -18,8 +18,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: locale === "ar" ? "المجلة" : "Journal",
     description:
       locale === "ar"
-        ? "ملاحظات في الحرفية والمواد والتصميم من الجزيرة وودز."
-        : "Notes on craftsmanship, materials, and design from Al Jazeera Woodz.",
+        ? "ملاحظات في الحرفية والمواد والتصميم من الجزيرة للأعمال الخشبية."
+        : "Notes on craftsmanship, materials, and design from Al Jazeera Wooden Works.",
   });
 }
 
@@ -37,8 +37,8 @@ export default async function BlogIndexPage({ params }: { params: Promise<{ loca
         title={locale === "ar" ? "داخل الحرفة." : "Inside the Craft."}
         description={
           locale === "ar"
-            ? "ملاحظات حول النجارة والمواد والتصميم — من فريق الجزيرة وودز."
-            : "Notes on joinery, materials and design — from the Al Jazeera Woodz team."
+            ? "ملاحظات حول النجارة والمواد والتصميم — من فريق الجزيرة للأعمال الخشبية."
+            : "Notes on joinery, materials and design — from the Al Jazeera Wooden Works team."
         }
         image={featured.image}
       />
@@ -53,7 +53,7 @@ export default async function BlogIndexPage({ params }: { params: Promise<{ loca
               <p className="eyebrow mb-3">{featured.category[locale]}</p>
               <h2 className="font-display text-3xl text-charcoal sm:text-5xl">{featured.title[locale]}</h2>
               <p className="mt-4 max-w-md text-charcoal/70">{featured.excerpt[locale]}</p>
-              <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-brass">
+              <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-teal">
                 {dictionary.common.readArticle}
                 <ArrowUpRight className="h-4 w-4 rtl:-scale-x-100" />
               </span>
@@ -69,7 +69,7 @@ export default async function BlogIndexPage({ params }: { params: Promise<{ loca
                   <Image src={article.image} alt="" fill sizes="33vw" className="object-cover transition-transform duration-700 ease-editorial group-hover:scale-105" />
                 </div>
                 <p className="eyebrow mt-5">{article.category[locale]}</p>
-                <h3 className="mt-2 font-display text-xl leading-snug text-charcoal group-hover:text-brass sm:text-2xl">
+                <h3 className="mt-2 font-display text-xl leading-snug text-charcoal group-hover:text-teal sm:text-2xl">
                   {article.title[locale]}
                 </h3>
                 <p className="mt-2 text-sm text-charcoal/60">

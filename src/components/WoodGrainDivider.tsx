@@ -8,7 +8,7 @@ export default function WoodGrainDivider({ className = "" }: { className?: strin
     <svg
       viewBox="0 0 1200 80"
       preserveAspectRatio="none"
-      className={`h-10 w-full text-brass/40 sm:h-14 ${className}`}
+      className={`h-10 w-full text-teal/40 sm:h-14 ${className}`}
       aria-hidden="true"
     >
       <path

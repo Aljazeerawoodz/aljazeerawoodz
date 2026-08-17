@@ -40,7 +40,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ locale
     <>
       <article className="pt-32">
         <div className="container-edit max-w-3xl">
-          <Link href={`/${locale}/blog`} className="inline-flex items-center gap-2 text-sm text-charcoal/60 hover:text-brass">
+          <Link href={`/${locale}/blog`} className="inline-flex items-center gap-2 text-sm text-charcoal/60 hover:text-teal">
             <BackIcon className="h-4 w-4" />
             {dictionary.common.backTo} {dictionary.nav.journal}
           </Link>

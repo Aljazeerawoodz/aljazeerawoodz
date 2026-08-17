@@ -34,7 +34,7 @@ export default function ContactForm({ locale, dictionary }: { locale: Locale; di
   }
 
   const inputClass =
-    "w-full rounded-sm border border-charcoal/15 bg-transparent px-4 py-3 text-charcoal placeholder:text-charcoal/40 focus:border-brass focus:outline-none";
+    "w-full rounded-sm border border-charcoal/15 bg-transparent px-4 py-3 text-charcoal placeholder:text-charcoal/40 focus:border-teal focus:outline-none";
   const labelClass = "mb-2 block text-sm font-medium text-charcoal/70";
 
   return (

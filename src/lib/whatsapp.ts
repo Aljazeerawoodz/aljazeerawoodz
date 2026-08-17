@@ -8,11 +8,11 @@ export function whatsappLink(message: string) {
 
 export const whatsappMessages = {
   en: {
-    general: "Hello Al Jazeera Woodz, I would like to enquire about a project.",
-    service: (service: string) => `Hello Al Jazeera Woodz, I would like to enquire about ${service}.`,
+    general: "Hello Al Jazeera Wooden Works, I would like to enquire about a project.",
+    service: (service: string) => `Hello Al Jazeera Wooden Works, I would like to enquire about ${service}.`,
   },
   ar: {
-    general: "مرحبًا الجزيرة وودز، أرغب في الاستفسار عن مشروع.",
-    service: (service: string) => `مرحبًا الجزيرة وودز، أرغب في الاستفسار عن ${service}.`,
+    general: "مرحبًا الجزيرة للأعمال الخشبية، أرغب في الاستفسار عن مشروع.",
+    service: (service: string) => `مرحبًا الجزيرة للأعمال الخشبية، أرغب في الاستفسار عن ${service}.`,
   },
 };

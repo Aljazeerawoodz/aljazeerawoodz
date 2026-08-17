@@ -59,12 +59,12 @@ export default function CustomCursor() {
     <>
       <div
         ref={dotRef}
-        className="pointer-events-none fixed left-0 top-0 z-[200] h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brass"
+        className="pointer-events-none fixed left-0 top-0 z-[200] h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-teal"
       />
       <div
         ref={ringRef}
         className={`pointer-events-none fixed left-0 top-0 z-[200] -translate-x-1/2 -translate-y-1/2 rounded-full border border-charcoal/40 transition-[width,height,border-color] duration-200 ease-editorial ${
-          active ? "h-10 w-10 border-brass" : "h-7 w-7"
+          active ? "h-10 w-10 border-teal" : "h-7 w-7"
         }`}
       />
     </>

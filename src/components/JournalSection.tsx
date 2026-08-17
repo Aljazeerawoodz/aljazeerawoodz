@@ -19,7 +19,7 @@ export default function JournalSection({ locale, dictionary }: { locale: Locale;
           <Link
             href={`/${locale}/blog`}
             data-cursor-hover
-            className="hidden shrink-0 items-center gap-2 text-sm font-medium text-charcoal/70 hover:text-brass sm:flex"
+            className="hidden shrink-0 items-center gap-2 text-sm font-medium text-charcoal/70 hover:text-teal sm:flex"
           >
             {dictionary.common.viewAll}
             <ArrowUpRight className="h-4 w-4 rtl:-scale-x-100" />
@@ -41,7 +41,7 @@ export default function JournalSection({ locale, dictionary }: { locale: Locale;
               <p className="eyebrow mt-6">{featured.category[locale]}</p>
               <h3 className="mt-2 font-display text-3xl text-charcoal sm:text-4xl">{featured.title[locale]}</h3>
               <p className="mt-3 max-w-lg text-charcoal/70">{featured.excerpt[locale]}</p>
-              <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-brass">
+              <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-teal">
                 {dictionary.common.readArticle}
                 <ArrowUpRight className="h-4 w-4 rtl:-scale-x-100" />
               </span>
@@ -57,7 +57,7 @@ export default function JournalSection({ locale, dictionary }: { locale: Locale;
                   </div>
                   <div>
                     <p className="eyebrow">{article.category[locale]}</p>
-                    <h4 className="mt-1 font-display text-lg leading-snug text-charcoal group-hover:text-brass sm:text-xl">
+                    <h4 className="mt-1 font-display text-lg leading-snug text-charcoal group-hover:text-teal sm:text-xl">
                       {article.title[locale]}
                     </h4>
                   </div>
