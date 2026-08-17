@@ -97,14 +97,23 @@ export default function Navbar({ locale, dictionary }: { locale: Locale; diction
           </Link>
         </div>
 
-        <button
-          type="button"
-          aria-label="Menu"
-          onClick={() => setOpen((v) => !v)}
-          className={`flex h-10 w-10 items-center justify-center lg:hidden ${transparent ? "text-warm" : "text-charcoal"}`}
-        >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        <div className="flex items-center gap-4 lg:hidden">
+          <Link
+            href={otherHref}
+            data-cursor-hover
+            className={`text-sm font-medium underline-offset-4 hover:underline ${transparent ? "text-warm/90" : "text-charcoal/80"}`}
+          >
+            {dictionary.common.languageSwitch}
+          </Link>
+          <button
+            type="button"
+            aria-label="Menu"
+            onClick={() => setOpen((v) => !v)}
+            className={`flex h-10 w-10 items-center justify-center ${transparent ? "text-warm" : "text-charcoal"}`}
+          >
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>
