@@ -57,25 +57,49 @@ Extracted originals (all pages, unfiltered) are kept in `public/brand/` for
 reference; the curated subset actually used by the site lives in
 `public/images/`.
 
-## The hero background video
+## Hero, Material section, and Services page background videos
 
-`public/video/hero-interior.mp4` (+ `hero-interior-poster.jpg`) is
-**licensed stock footage from Pexels** — a styled, wood-panelled interior
-with warm candlelight — selected and approved in this build's chat by the
-client, not generated. Pexels License: free for commercial use, no
-attribution required. Source:
-`pexels.com/video/modern-wooden-house-interior-7749087`. Downloaded once
-(~43MB, 3840×2160, ~20s), then trimmed to 10s, downscaled to 1080p,
-stripped of audio, and re-encoded with ffmpeg to <1MB for web delivery.
+Three **client-supplied files**, dropped directly into `public/video/` and
+wired in on request — re-encoded here only for the web (audio stripped,
+faststart flag added; originals kept alongside with matching non-`-web`
+names). Their original source/license is unconfirmed as of this build.
 
-An earlier version used a different clip (a craftsman measuring timber,
-`measuring-wood-for-cutting-20184480` by Everett Bumstead) — swapped out on
-request for something that reads as a finished interior rather than a
-workshop process shot. That original file has been removed from the repo;
-the same Pexels License terms applied to it.
+- `middle-banner-web.mp4` → homepage hero (top banner) — an empty room
+  with base cabinetry mid-install
+- `hero-banner-web.mp4` → Material section ("Every surface tells a
+  story") — a concrete-and-wood kitchen counter with a drawer sliding open
+- `modern-arch-web.mp4` → `/services` page header — a wood-panelled living
+  room / hallway
 
-**Either way, this is illustrative b-roll, not footage of Al Jazeera
-Woodz's actual work.**
+(Note the filenames are the reverse of where each one is actually used —
+that's the client's own naming from before assignment, kept as-is so the
+file names still match what's physically on disk.)
+
+**Flagged directly to the client in chat:** all three clips have the
+visual signature of AI-generated video — a small sparkle/star mark, fixed
+bottom-right, consistent across every frame — rather than real photographed
+spaces (unrealistic plumbing rough-ins with no sink, furniture with no
+visible seams/hardware consistency, and other tells typical of generative
+video). If that's confirmed, these need replacing (or at minimum cropping
+the corner mark) before the site is genuinely live — using unlicensed or
+misrepresentative footage on a commercial site is a real risk, not just a
+style note.
+
+Earlier builds used two different clips instead — licensed Pexels stock
+(a craftsman measuring timber, then a styled wood-panelled interior) —
+swapped out on request for the client's own files. Removed from the repo;
+Pexels License terms (free commercial use, no attribution required)
+applied to both while they were in use.
+
+Either way — stock or client-supplied — none of this is footage of Al
+Jazeera Woodz's actual work. `src/components/Hero.tsx` and
+`src/components/MaterialSection.tsx` both fall back automatically to a
+still image (the photo carousel, for the hero) on reduced-motion
+preference, data-saver connections, or if the video file fails to load.
+`src/components/PageHero.tsx`'s optional `video` prop (used on
+`/services`) falls back to its poster image on reduced-motion only, via
+Tailwind's `motion-reduce:` variant — no data-saver check there since it's
+a much smaller file and not the largest-contentful-paint element.
 
 ## One more licensed stock photo
 
@@ -85,9 +109,4 @@ the Material section's scroll strip on request. Pexels License, free
 commercial use, no attribution required. Source:
 `pexels.com/photo/wooden-architectural-panel-with-unique-design-34936774`
 (Maria M.). Same rule as everything else non-PDF: it's mood/texture
-imagery, not a claim about Al Jazeera Woodz's own work. Swap it for real footage the moment the company has any —
-`src/components/Hero.tsx` already falls back to the photo carousel (which
-*is* built entirely from the company's own PDF imagery) automatically on
-reduced-motion preference, data-saver connections, or if the video file
-ever fails to load, so replacing/removing the video is a one-line change
-with no risk of a broken hero in the meantime.
+imagery, not a claim about Al Jazeera Woodz's own work.

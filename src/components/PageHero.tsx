@@ -6,12 +6,41 @@ interface PageHeroProps {
   title: string;
   description?: string;
   image?: string;
+  /** Optional background video — falls back to `image`/poster automatically
+      for prefers-reduced-motion (Tailwind's motion-reduce: variant, no JS
+      needed since this stays a server component). */
+  video?: string;
 }
 
-export default function PageHero({ eyebrow, title, description, image }: PageHeroProps) {
+export default function PageHero({ eyebrow, title, description, image, video }: PageHeroProps) {
   return (
     <section className="relative flex min-h-[52vh] items-end overflow-hidden bg-charcoal pt-32">
-      {image ? (
+      {video ? (
+        <>
+          <video
+            className="absolute inset-0 h-full w-full object-cover opacity-50 motion-reduce:hidden"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster={image}
+          >
+            <source src={video} type="video/mp4" />
+          </video>
+          {image ? (
+            <Image
+              src={image}
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+              className="hidden object-cover opacity-50 motion-reduce:block"
+            />
+          ) : null}
+          <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/70 to-charcoal/40" />
+        </>
+      ) : image ? (
         <>
           <Image src={image} alt="" fill priority sizes="100vw" className="object-cover opacity-50" />
           <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/70 to-charcoal/40" />

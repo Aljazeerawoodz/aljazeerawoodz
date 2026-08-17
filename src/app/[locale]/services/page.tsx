@@ -39,7 +39,8 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
             ? "مجموعة كاملة من الخدمات المصممة لتغطية كل من التنفيذ الإنشائي والتشطيبات التفصيلية داخل المساحة."
             : "A complete range of services designed to cover both structural execution and detailed finishing within a space."
         }
-        image="/images/interior-fitout.jpg"
+        image="/video/modern-arch-poster.jpg"
+        video="/video/modern-arch-web.mp4"
       />
 
       <section className="container-edit py-24 sm:py-32">

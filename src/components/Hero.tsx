@@ -43,8 +43,8 @@ const slides = [
 ];
 
 /**
- * Hero background video — client-supplied file (public/video/hero-banner.mp4,
- * re-encoded here as hero-banner-web.mp4: audio stripped, faststart flag
+ * Hero background video — client-supplied file (public/video/middle-banner.mp4,
+ * re-encoded here as middle-banner-web.mp4: audio stripped, faststart flag
  * added). Source/license unconfirmed as of this build — it has the visual
  * signature of AI-generated video (a small sparkle/star mark, bottom-right,
  * consistent across frames) rather than a real photographed space. Flagged
@@ -53,8 +53,8 @@ const slides = [
  * carousel below on slow connections, reduced-motion preference, or if
  * the video fails to load.
  */
-const HERO_VIDEO_SRC = "/video/hero-banner-web.mp4";
-const HERO_VIDEO_POSTER = "/video/hero-banner-poster.jpg";
+const HERO_VIDEO_SRC = "/video/middle-banner-web.mp4";
+const HERO_VIDEO_POSTER = "/video/middle-banner-poster.jpg";
 
 function PhotoCarousel({ locale, active }: { locale: Locale; active: number }) {
   const reduced = useReducedMotion();

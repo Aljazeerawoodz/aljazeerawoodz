@@ -1,10 +1,18 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import type { Locale } from "@/i18n/locales";
 import { materialStatement } from "@/data/company";
+
+/**
+ * Client-supplied file (public/video/hero-banner.mp4, re-encoded here
+ * as hero-banner-web.mp4: audio stripped, faststart added). Same
+ * provenance note as the hero video — see docs/content-sources.md.
+ */
+const FEATURE_VIDEO_SRC = "/video/hero-banner-web.mp4";
+const FEATURE_VIDEO_POSTER = "/video/hero-banner-poster.jpg";
 
 const strip = [
   { src: "/images/joinery-detail.jpg", alt: "Joinery workshop tools and timber" },
@@ -19,20 +27,36 @@ export default function MaterialSection({ locale }: { locale: Locale }) {
   const featureRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: featureRef, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], reduced ? [0, 0] : [-60, 60]);
+  const [videoFailed, setVideoFailed] = useState(false);
+  const useVideo = !reduced && !videoFailed;
 
   return (
     <section className="relative overflow-hidden bg-charcoal py-28 text-warm sm:py-36">
-      {/* Full-bleed featured moment — the wood-carving detail gets real
-          visual weight, with a subtle scroll parallax for depth. */}
+      {/* Full-bleed featured moment — a scroll parallax for depth either way. */}
       <div ref={featureRef} className="relative mb-16 h-[62vh] min-h-[420px] w-full overflow-hidden sm:mb-20">
         <motion.div style={{ y }} className="absolute inset-0 -top-16 -bottom-16">
-          <Image
-            src="/images/material-detail.jpg"
-            alt="Hand-carved wood detail"
-            fill
-            sizes="100vw"
-            className="object-cover"
-          />
+          {useVideo ? (
+            <video
+              className="h-full w-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              poster={FEATURE_VIDEO_POSTER}
+              onError={() => setVideoFailed(true)}
+            >
+              <source src={FEATURE_VIDEO_SRC} type="video/mp4" />
+            </video>
+          ) : (
+            <Image
+              src={reduced ? "/images/material-detail.jpg" : FEATURE_VIDEO_POSTER}
+              alt="Hand-carved wood detail"
+              fill
+              sizes="100vw"
+              className="object-cover"
+            />
+          )}
         </motion.div>
         {/* Darkens only the bottom where the heading sits and leaves the
             top of the image clear — the previous version also washed the
