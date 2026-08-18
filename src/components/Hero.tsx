@@ -8,8 +8,8 @@ import type { Locale } from "@/i18n/locales";
 import type { Dictionary } from "@/i18n/dictionaries";
 
 const lines = {
-  en: ["ANY WOOD.", "ANY DESIGN."],
-  ar: ["أي خشب،", "أي تصميم."],
+  en: ["ANY WOOD. ANY DESIGN."],
+  ar: ["أي خشب، أي تصميم."],
 };
 
 const SLIDE_SECONDS = 6.5;
@@ -154,17 +154,21 @@ export default function Hero({ locale, dictionary }: { locale: Locale; dictionar
           transition={{ duration: 0.8, delay: 0.2 }}
           className="eyebrow mb-6 text-warm/80"
         >
-          {locale === "ar" ? "تشطيبات داخلية · نجارة · أثاث مخصص" : "Interior Fitout · Joinery · Custom Furniture"}
+          <span className="font-bold">
+            {locale === "ar"
+              ? "تشطيبات داخلية · نجارة · أثاث مخصص · ديكورات الأفلام والفعاليات"
+              : "Interior Fitout · Joinery · Custom Furniture · Film & Event Sets"}
+          </span>
         </motion.p>
 
-        <h1 className="font-display font-semibold leading-[0.95] text-warm">
+        <h1 className="font-display font-semibold leading-[1.05] text-warm text-balance">
           {lines[locale].map((line, i) => (
             <span key={line} className="block overflow-hidden">
               <motion.span
                 initial={{ y: reduced ? 0 : "110%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.9, delay: 0.15 * i, ease: [0.22, 1, 0.36, 1] }}
-                className="block text-[13vw] sm:text-[9vw] lg:text-[7vw]"
+                className="block text-[9vw] sm:text-[5.5vw] lg:text-[3.8vw]"
               >
                 {line}
               </motion.span>

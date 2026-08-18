@@ -1,7 +1,7 @@
 import type { Bi } from "./types";
 
 /**
- * No completed Al Jazeera Wooden Works projects were supplied with this build, so
+ * No completed Al Jazeera Woodz projects were supplied with this build, so
  * this list intentionally starts empty rather than inventing case studies.
  * Drop real project entries in here — with real photography in
  * /public/projects/<slug>/ — once they're available, and the /projects

@@ -18,8 +18,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: locale === "ar" ? "المجلة" : "Journal",
     description:
       locale === "ar"
-        ? "ملاحظات في الحرفية والمواد والتصميم من الجزيرة للأعمال الخشبية."
-        : "Notes on craftsmanship, materials, and design from Al Jazeera Wooden Works.",
+        ? "ملاحظات في الحرفية والمواد والتصميم من الجزيرة وودز."
+        : "Notes on craftsmanship, materials, and design from Al Jazeera Woodz.",
   });
 }
 
@@ -37,8 +37,8 @@ export default async function BlogIndexPage({ params }: { params: Promise<{ loca
         title={locale === "ar" ? "داخل الحرفة." : "Inside the Craft."}
         description={
           locale === "ar"
-            ? "ملاحظات حول النجارة والمواد والتصميم — من فريق الجزيرة للأعمال الخشبية."
-            : "Notes on joinery, materials and design — from the Al Jazeera Wooden Works team."
+            ? "ملاحظات حول النجارة والمواد والتصميم — من فريق الجزيرة وودز."
+            : "Notes on joinery, materials and design — from the Al Jazeera Woodz team."
         }
         image={featured.image}
       />

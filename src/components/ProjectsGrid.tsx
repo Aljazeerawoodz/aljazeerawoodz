@@ -54,8 +54,8 @@ export default function ProjectsGrid({ locale, dictionary }: { locale: Locale; d
           </p>
           <p className="mt-4 max-w-md text-charcoal/60">
             {locale === "ar"
-              ? "سيتم نشر مشاريع الجزيرة للأعمال الخشبية الحقيقية هنا فور توفر الصور والتفاصيل. تواصلوا معنا لمناقشة مشروعكم القادم."
-              : "Real Al Jazeera Wooden Works project photography will appear here as it becomes available. Get in touch to discuss what we could build for your space."}
+              ? "سيتم نشر مشاريع الجزيرة وودز الحقيقية هنا فور توفر الصور والتفاصيل. تواصلوا معنا لمناقشة مشروعكم القادم."
+              : "Real Al Jazeera Woodz project photography will appear here as it becomes available. Get in touch to discuss what we could build for your space."}
           </p>
           <Link href={`/${locale}/contact`} className="mt-8 rounded-full bg-charcoal px-7 py-3.5 text-sm font-medium text-warm">
             {dictionary.nav.cta}

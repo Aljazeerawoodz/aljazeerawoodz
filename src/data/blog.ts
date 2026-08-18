@@ -16,7 +16,7 @@ export interface Article {
  * (joinery, fitout, kitchens, furniture, materials). These are original
  * craft-perspective writing, not case studies — no client names, projects,
  * or figures are claimed. See CLAUDE guidance in the root prompt: do not
- * present these as completed Al Jazeera Wooden Works projects.
+ * present these as completed Al Jazeera Woodz projects.
  */
 export const articles: Article[] = [
   {

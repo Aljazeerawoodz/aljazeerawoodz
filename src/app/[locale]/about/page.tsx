@@ -33,14 +33,30 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       <PageHero
         eyebrow={locale === "ar" ? "من نحن" : "About"}
         title={locale === "ar" ? "من نحن." : "Who We Are."}
-        image="/images/about-atmosphere.jpg"
+        image="/video/project08-poster.jpg"
+        video="/video/project08-web.mp4"
       />
 
       <section className="container-edit py-24 sm:py-32">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1.2fr]">
-          <SectionHeading eyebrow={locale === "ar" ? "نبذة عنا" : "Who We Are"} title={locale === "ar" ? "نبني عبر التقاطع." : "We build at the intersection."} />
+          <SectionHeading eyebrow={locale === "ar" ? "نبذة عنا" : "Who We Are"} title={locale === "ar" ? "جاهزون للمشاريع الأكثر تحديًا." : "Ready for the harder brief."} />
           <Reveal delay={0.1}>
             <p className="text-lg leading-relaxed text-charcoal/75">{whoWeAre[locale]}</p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Client note relayed directly in chat: openness to bigger/more
+          unusual briefs, including stage and set builds for film/event
+          productions — not in the original PDF, added on request. */}
+      <section className="border-y border-charcoal/10 bg-warm-dim py-16">
+        <div className="container-edit">
+          <Reveal>
+            <p className="max-w-3xl font-display text-2xl leading-snug text-charcoal sm:text-3xl">
+              {locale === "ar"
+                ? "نحن منفتحون على المشاريع الأكثر تحديًا — من التشطيبات الداخلية المعقدة إلى بناء المسارح والأعمال الفنية لمواقع تصوير الأفلام والفعاليات."
+                : "We're open for more challenging projects — from complex interior builds to stages and art-piece builds for film shoots and events."}
+            </p>
           </Reveal>
         </div>
       </section>

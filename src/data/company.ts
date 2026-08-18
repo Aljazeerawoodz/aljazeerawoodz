@@ -1,7 +1,7 @@
 import type { Bi, BiList } from "./types";
 
 /**
- * Every fact below is sourced directly from the Al Jazeera Wooden Works company
+ * Every fact below is sourced directly from the Al Jazeera Woodz company
  * profile PDF (English + Arabic text as supplied by the company). Do not
  * add statistics, years of experience, staff counts, awards or client
  * names here unless they come from the company itself — see CLAUDE-style
@@ -9,7 +9,7 @@ import type { Bi, BiList } from "./types";
  */
 
 export const brand = {
-  name: { en: "Al Jazeera Wooden Works", ar: "الجزيرة للأعمال الخشبية" } satisfies Bi,
+  name: { en: "Al Jazeera Woodz", ar: "الجزيرة وودز" } satisfies Bi,
   legalName: { en: "Al Jazeera Wooden Works", ar: "الجزيرة للأعمال الخشبية" } satisfies Bi,
   tagline: { en: "Any Wood, Any Design", ar: "أي خشب، أي تصميم" } satisfies Bi,
   domain: "aljazeerawoodz.com",
@@ -55,8 +55,8 @@ export const license = {
 };
 
 export const whoWeAre: Bi = {
-  en: "Al Jazeera Wooden Works operates at the intersection of interior fitout, joinery, and custom furniture, delivering solutions across the UAE that are shaped around how spaces are actually used. The focus is not just on how things look, but on how well they perform over time. From detailed joinery to complete interior execution, every project is handled with a practical mindset and a strong sense of finishing. The approach remains consistent — clear planning, careful material selection, and work that feels complete in both function and appearance.",
-  ar: "تعمل الجزيرة للأعمال الخشبية عند تقاطع التشطيبات الداخلية والنجارة والأثاث المصصم حسب الطلب، لتقديم حلول في جميع أنحاء الإمارات العربية المتحدة مصممة وفق الطريقة التي تُستخدم بها المساحات فعليًا. لا يقتصر تركيزنا على المظهر فحسب، بل يمتد إلى مدى الأداء والكفاءة على المدى البعيد. من أعمال النجارة الدقيقة إلى التنفيذ الداخلي الكامل، يُدار كل مشروع بعقلية عملية وإحساس راسخ بالإتقان. يبقى النهج ثابتًا دائمًا — تخطيط واضح، واختيار دقيق للمواد، وأعمال تبدو مكتملة في الوظيفة والمظهر معًا.",
+  en: "Al Jazeera Woodz operates at the intersection of interior fitout, joinery, and custom furniture, delivering solutions across the UAE that are shaped around how spaces are actually used. The focus is not just on how things look, but on how well they perform over time. From detailed joinery to complete interior execution, every project is handled with a practical mindset and a strong sense of finishing. The approach remains consistent — clear planning, careful material selection, and work that feels complete in both function and appearance.",
+  ar: "تعمل الجزيرة وودز عند تقاطع التشطيبات الداخلية والنجارة والأثاث المصصم حسب الطلب، لتقديم حلول في جميع أنحاء الإمارات العربية المتحدة مصممة وفق الطريقة التي تُستخدم بها المساحات فعليًا. لا يقتصر تركيزنا على المظهر فحسب، بل يمتد إلى مدى الأداء والكفاءة على المدى البعيد. من أعمال النجارة الدقيقة إلى التنفيذ الداخلي الكامل، يُدار كل مشروع بعقلية عملية وإحساس راسخ بالإتقان. يبقى النهج ثابتًا دائمًا — تخطيط واضح، واختيار دقيق للمواد، وأعمال تبدو مكتملة في الوظيفة والمظهر معًا.",
 };
 
 export const introStatement: Bi = {
@@ -65,8 +65,8 @@ export const introStatement: Bi = {
 };
 
 export const introBody: Bi = {
-  en: "Al Jazeera Wooden Works combines practical design thinking, careful material selection, and hands-on craftsmanship across interior fitout, joinery, and custom furniture — with structured execution from first sketch to final handover.",
-  ar: "تجمع الجزيرة للأعمال الخشبية بين التفكير التصميمي العملي، والاختيار الدقيق للمواد، والحرفية اليدوية عبر التشطيبات الداخلية والنجارة والأثاث المصمم حسب الطلب — مع تنفيذ منظم من أول رسم حتى التسليم النهائي.",
+  en: "Al Jazeera Woodz combines practical design thinking, careful material selection, and hands-on craftsmanship across interior fitout, joinery, and custom furniture — with structured execution from first sketch to final handover.",
+  ar: "تجمع الجزيرة وودز بين التفكير التصميمي العملي، والاختيار الدقيق للمواد، والحرفية اليدوية عبر التشطيبات الداخلية والنجارة والأثاث المصمم حسب الطلب — مع تنفيذ منظم من أول رسم حتى التسليم النهائي.",
 };
 
 export interface StoryStage {
@@ -104,8 +104,8 @@ export const story: StoryStage[] = [
     number: "04",
     title: { en: "Today", ar: "اليوم" },
     body: {
-      en: "Al Jazeera Wooden Works continues to operate with a balanced approach, combining traditional craftsmanship with structured project execution.",
-      ar: "تواصل الجزيرة للأعمال الخشبية العمل بنهج متوازن، يجمع بين الحرفية التقليدية والتنفيذ المنظم للمشاريع.",
+      en: "Al Jazeera Woodz continues to operate with a balanced approach, combining traditional craftsmanship with structured project execution.",
+      ar: "تواصل الجزيرة وودز العمل بنهج متوازن، يجمع بين الحرفية التقليدية والتنفيذ المنظم للمشاريع.",
     },
   },
 ];
@@ -255,8 +255,8 @@ export const materialStatement: Bi = {
 };
 
 export const finalCta: Bi = {
-  en: "Let's build something worth living in.",
-  ar: "دعنا نبني ما يستحق العيش فيه.",
+  en: "Let us start building.",
+  ar: "لنبدأ البناء.",
 };
 
 export const projectTypes: BiList = {

@@ -12,7 +12,7 @@ export default function Loading() {
           <span className="absolute h-full w-full animate-ping rounded-full bg-teal/40" />
           <span className="relative h-8 w-8 animate-pulse rounded-full bg-teal" />
         </span>
-        <span className="eyebrow text-charcoal/60">Al Jazeera Wooden Works</span>
+        <span className="eyebrow text-charcoal/60">Al Jazeera Woodz</span>
       </div>
     </div>
   );

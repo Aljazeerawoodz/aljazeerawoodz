@@ -119,3 +119,15 @@ commercial use, no attribution required. Source:
 `pexels.com/photo/wooden-architectural-panel-with-unique-design-34936774`
 (Maria M.). Same rule as everything else non-PDF: it's mood/texture
 imagery, not a claim about Al Jazeera Woodz's own work.
+
+## About page video — possibly real footage
+
+`public/video/project08-web.mp4` (+ poster) — another client-supplied file,
+used as the About page header background. Unlike the three videos above,
+this one shows **no visible AI-tool watermark** and looks like genuine
+phone-shot footage of a real curved wood cabinet/shelving unit with
+built-in lighting — plausibly actual Al Jazeera Woodz work. Not confirmed
+either way in chat, so still treated as illustrative rather than
+explicitly claimed as a completed project. Source is portrait (592×1296);
+cropped with `object-top` to favor the top of frame since a center crop
+would lose the most detailed part of the piece.

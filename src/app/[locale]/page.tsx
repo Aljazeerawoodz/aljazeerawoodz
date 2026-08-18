@@ -23,8 +23,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: locale === "ar" ? "الرئيسية" : "Home",
     description:
       locale === "ar"
-        ? "الجزيرة للأعمال الخشبية — تشطيبات داخلية وأعمال نجارة وأثاث مخصص في الإمارات العربية المتحدة."
-        : "Al Jazeera Wooden Works — interior fitout, joinery and custom furniture across the UAE.",
+        ? "الجزيرة وودز — تشطيبات داخلية وأعمال نجارة وأثاث مخصص في الإمارات العربية المتحدة."
+        : "Al Jazeera Woodz — interior fitout, joinery and custom furniture across the UAE.",
   });
 }
 

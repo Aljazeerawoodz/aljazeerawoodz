@@ -20,7 +20,7 @@ export default function GlobalNotFound() {
       }}
     >
       <p style={{ letterSpacing: "0.28em", textTransform: "uppercase", fontSize: 12, color: "#2B7089", marginBottom: 16 }}>
-        Al Jazeera Wooden Works
+        Al Jazeera Woodz
       </p>
       <h1 style={{ fontSize: 32, marginBottom: 12 }}>Page not found</h1>
       {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}

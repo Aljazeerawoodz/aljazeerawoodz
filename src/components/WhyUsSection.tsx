@@ -8,7 +8,7 @@ export default function WhyUsSection({ locale }: { locale: Locale }) {
     <section className="border-t border-charcoal/10 bg-charcoal py-28 text-warm sm:py-36">
       <div className="container-edit">
         <SectionHeading
-          eyebrow={locale === "ar" ? "لماذا الجزيرة للأعمال الخشبية" : "Why Al Jazeera Wooden Works"}
+          eyebrow={locale === "ar" ? "لماذا الجزيرة وودز" : "Why Al Jazeera Woodz"}
           title={locale === "ar" ? "أربعة أسباب تدفعنا للاستمرار." : "Four things we hold ourselves to."}
         />
 

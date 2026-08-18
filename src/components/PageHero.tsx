@@ -18,7 +18,7 @@ export default function PageHero({ eyebrow, title, description, image, video }: 
       {video ? (
         <>
           <video
-            className="absolute inset-0 h-full w-full object-cover opacity-50 motion-reduce:hidden"
+            className="absolute inset-0 h-full w-full object-cover object-top opacity-50 motion-reduce:hidden"
             autoPlay
             muted
             loop
@@ -35,7 +35,7 @@ export default function PageHero({ eyebrow, title, description, image, video }: 
               fill
               priority
               sizes="100vw"
-              className="hidden object-cover opacity-50 motion-reduce:block"
+              className="hidden object-cover object-top opacity-50 motion-reduce:block"
             />
           ) : null}
           <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/70 to-charcoal/40" />

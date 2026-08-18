@@ -1,10 +1,10 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Instagram, Facebook, Linkedin, Phone, Mail, MapPin } from "lucide-react";
 import type { Locale } from "@/i18n/locales";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { brand, contact } from "@/data/company";
 import { services } from "@/data/services";
+import BrandMark from "./BrandMark";
 
 export default function Footer({ locale, dictionary }: { locale: Locale; dictionary: Dictionary }) {
   const year = new Date().getFullYear();
@@ -14,11 +14,7 @@ export default function Footer({ locale, dictionary }: { locale: Locale; diction
       <div className="container-edit py-16 lg:py-24">
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           <div className="sm:col-span-2 lg:col-span-1">
-            <Link href={`/${locale}`} className="flex items-center gap-3">
-              <Image src="/brand/logo-mark.png" alt={brand.name.en} width={40} height={40} className="h-10 w-10 rounded-full" />
-              <span className="font-display text-xl font-semibold text-charcoal">{brand.name[locale]}</span>
-            </Link>
-            <p className="font-script mt-4 max-w-xs text-xl text-charcoal/70">{dictionary.footer.tagline}</p>
+            <BrandMark locale={locale} dictionary={dictionary} tone="dark" />
             <div className="mt-6 flex items-center gap-4">
               <a href={contact.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-charcoal/60 hover:text-teal">
                 <Instagram className="h-5 w-5" />

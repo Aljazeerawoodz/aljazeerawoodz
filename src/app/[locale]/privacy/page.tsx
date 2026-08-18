@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: locale === "ar" ? "سياسة الخصوصية" : "Privacy Policy",
     description:
       locale === "ar"
-        ? "كيف تجمع الجزيرة للأعمال الخشبية بياناتكم وتستخدمها وتحميها."
-        : "How Al Jazeera Wooden Works collects, uses, and protects your information.",
+        ? "كيف تجمع الجزيرة وودز بياناتكم وتستخدمها وتحميها."
+        : "How Al Jazeera Woodz collects, uses, and protects your information.",
   });
 }
 
@@ -27,7 +27,7 @@ const sections: { heading: { en: string; ar: string }; body: { en: string[]; ar:
         `This Privacy Policy explains how ${brand.name.en} ("we", "us", "our") collects, uses, and protects information when you visit ${brand.domain}, contact us through the enquiry form, or message us on WhatsApp. By using this website, you agree to the practices described here.`,
       ],
       ar: [
-        `توضح سياسة الخصوصية هذه كيفية جمع "الجزيرة للأعمال الخشبية" ("نحن") للمعلومات واستخدامها وحمايتها عند زيارتكم للموقع ${brand.domain}، أو تواصلكم معنا عبر نموذج الاستفسار، أو مراسلتنا عبر واتساب. باستخدامكم لهذا الموقع، فإنكم توافقون على الممارسات الموضحة هنا.`,
+        `توضح سياسة الخصوصية هذه كيفية جمع "الجزيرة وودز" ("نحن") للمعلومات واستخدامها وحمايتها عند زيارتكم للموقع ${brand.domain}، أو تواصلكم معنا عبر نموذج الاستفسار، أو مراسلتنا عبر واتساب. باستخدامكم لهذا الموقع، فإنكم توافقون على الممارسات الموضحة هنا.`,
       ],
     },
   },
