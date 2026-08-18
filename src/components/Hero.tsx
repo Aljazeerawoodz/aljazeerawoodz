@@ -161,7 +161,7 @@ export default function Hero({ locale, dictionary }: { locale: Locale; dictionar
           </span>
         </motion.p>
 
-        <h1 className="font-script font-bold leading-[1.15] text-warm text-balance">
+        <h1 className="font-script leading-[1.15] text-warm text-balance">
           {lines[locale].map((line, i) => (
             <span key={line} className="block overflow-hidden">
               <motion.span

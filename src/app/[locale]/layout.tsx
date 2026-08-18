@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter, Cairo, Dancing_Script } from "next/font/google";
+import { Playfair_Display, Inter, Cairo, Alex_Brush } from "next/font/google";
 import { notFound } from "next/navigation";
 import { locales, isLocale, dir, type Locale } from "@/i18n/locales";
 import { getDictionary } from "@/i18n/dictionaries";
@@ -32,12 +32,13 @@ const arabic = Cairo({
   display: "swap",
 });
 
-/** Script accent font for tagline moments ("Any Wood, Any Design") — matches
-    the cursive style on the client's carved wood sign. Used sparingly, not
-    for body/heading text. */
-const script = Dancing_Script({
+/** Script accent font for tagline moments ("Any Wood, Any Design") — a
+    flowing calligraphy script matching the cursive style on the client's
+    carved wood sign closely (single-weight, connected letterforms). Used
+    sparingly, not for body/heading text. */
+const script = Alex_Brush({
   subsets: ["latin"],
-  weight: ["600", "700"],
+  weight: ["400"],
   variable: "--font-script",
   display: "swap",
 });
