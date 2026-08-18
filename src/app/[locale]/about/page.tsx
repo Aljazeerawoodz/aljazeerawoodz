@@ -39,7 +39,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
       <section className="container-edit py-24 sm:py-32">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1.2fr]">
-          <SectionHeading eyebrow={locale === "ar" ? "نبذة عنا" : "Who We Are"} title={locale === "ar" ? "كل نسيج يحكي قصة." : "Every grain tells a story."} />
+          <SectionHeading eyebrow={locale === "ar" ? "نبذة عنا" : "Who We Are"} title={locale === "ar" ? "نُشكّل المساحات. نصنع القصص." : "Crafting spaces. Creating stories."} />
           <Reveal delay={0.1}>
             <p className="text-lg leading-relaxed text-charcoal/75">{whoWeAre[locale]}</p>
           </Reveal>
