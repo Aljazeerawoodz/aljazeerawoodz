@@ -23,12 +23,12 @@ export default function BrandMark({
   const taglineColor = tone === "dark" ? "text-charcoal/70" : "text-warm/70";
 
   return (
-    <Link href={`/${locale}`} className="inline-flex flex-wrap items-baseline gap-x-3 gap-y-1" data-cursor-hover>
-      <span className="flex items-center gap-3">
-        <Image src="/brand/logo-mark.png" alt={brand.name.en} width={44} height={44} className="h-11 w-11 shrink-0 rounded-full" />
-        <span className={`font-display text-2xl font-semibold tracking-tight ${textColor}`}>{brand.name[locale]}</span>
+    <Link href={`/${locale}`} className="inline-flex flex-wrap items-baseline gap-x-2 gap-y-1" data-cursor-hover>
+      <span className="flex items-center gap-2">
+        <Image src="/brand/logo-mark.png" alt={brand.name.en} width={32} height={32} className="h-8 w-8 shrink-0 rounded-full" />
+        <span className={`font-display text-lg font-semibold tracking-tight ${textColor}`}>{brand.name[locale]}</span>
       </span>
-      <span className={`font-script text-xl ${taglineColor}`}>{dictionary.footer.tagline}</span>
+      <span className={`font-script text-lg ${taglineColor}`}>{dictionary.footer.tagline}</span>
     </Link>
   );
 }
