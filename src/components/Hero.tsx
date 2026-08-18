@@ -152,7 +152,7 @@ export default function Hero({ locale, dictionary }: { locale: Locale; dictionar
           initial={{ opacity: 0, y: reduced ? 0 : 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="eyebrow mb-6 text-warm/80"
+          className="eyebrow mb-6 !text-base text-warm/80 sm:!text-lg"
         >
           <span className="font-bold">
             {locale === "ar"
