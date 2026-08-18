@@ -36,8 +36,8 @@ const slides = [
     caption: { en: "Workshop Craftsmanship", ar: "حرفية الورشة" },
   },
   {
-    src: "/images/wardrobe-storage.jpg",
-    alt: { en: "Fitted wardrobe cabinetry", ar: "خزائن ملابس مُجهزة" },
+    src: "/video/project08-poster.jpg",
+    alt: { en: "Custom-built wood cabinetry", ar: "خزائن خشبية مصممة حسب الطلب" },
     caption: { en: "Custom Cabinetry", ar: "خزائن مخصصة" },
   },
 ];

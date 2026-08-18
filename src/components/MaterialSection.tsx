@@ -14,10 +14,10 @@ import { materialStatement } from "@/data/company";
 const FEATURE_VIDEO_SRC = "/video/hero-banner-web.mp4";
 const FEATURE_VIDEO_POSTER = "/video/hero-banner-poster.jpg";
 
-const strip = [
+const strip: { src: string; alt: string; video?: string }[] = [
   { src: "/images/joinery-detail.jpg", alt: "Joinery workshop tools and timber" },
   { src: "/images/wood-shingle-detail.jpg", alt: "Traditional carved wood shingle facade detail" },
-  { src: "/images/wardrobe-storage.jpg", alt: "Fitted wardrobe cabinetry" },
+  { src: "/video/project08-poster.jpg", alt: "Custom-built wood cabinetry", video: "/video/project08-web.mp4" },
   { src: "/images/hero-main.jpg", alt: "Sculptural wood wall detailing" },
   { src: "/images/kitchen-alt.jpg", alt: "Wood-panelled kitchen detail" },
 ];
@@ -92,13 +92,27 @@ export default function MaterialSection({ locale }: { locale: Locale }) {
               i % 2 === 0 ? "w-[240px] sm:w-[300px]" : "w-[190px] sm:w-[230px]"
             }`}
           >
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              sizes="400px"
-              className="object-cover transition-transform duration-700 hover:scale-105"
-            />
+            {image.video && !reduced ? (
+              <video
+                className="absolute inset-0 h-full w-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                poster={image.src}
+              >
+                <source src={image.video} type="video/mp4" />
+              </video>
+            ) : (
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                sizes="400px"
+                className="object-cover transition-transform duration-700 hover:scale-105"
+              />
+            )}
           </motion.div>
         ))}
       </div>

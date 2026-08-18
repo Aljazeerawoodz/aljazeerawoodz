@@ -179,7 +179,7 @@ export const articles: Article[] = [
     },
     category: { en: "Materials", ar: "المواد" },
     minutes: 3,
-    image: "/images/wardrobe-storage.jpg",
+    image: "/video/project08-poster.jpg",
     body: {
       en: [
         "Contemporary interiors lean heavily on hard, cool surfaces — polished stone, glass, brushed metal. Wood plays a different role in that mix: it's warm to the touch, it ages visibly, and no two grain patterns are identical. That's exactly what makes it valuable in a space that's meant to be lived in, not just looked at.",
