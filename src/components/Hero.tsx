@@ -8,8 +8,8 @@ import type { Locale } from "@/i18n/locales";
 import type { Dictionary } from "@/i18n/dictionaries";
 
 const lines = {
-  en: ["ANY WOOD. ANY DESIGN."],
-  ar: ["أي خشب، أي تصميم."],
+  en: ["Any Wood, Any Design"],
+  ar: ["أي خشب، أي تصميم"],
 };
 
 const SLIDE_SECONDS = 6.5;
@@ -161,14 +161,14 @@ export default function Hero({ locale, dictionary }: { locale: Locale; dictionar
           </span>
         </motion.p>
 
-        <h1 className="font-display font-semibold leading-[1.05] text-warm text-balance">
+        <h1 className="font-script font-bold leading-[1.15] text-warm text-balance">
           {lines[locale].map((line, i) => (
             <span key={line} className="block overflow-hidden">
               <motion.span
                 initial={{ y: reduced ? 0 : "110%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.9, delay: 0.15 * i, ease: [0.22, 1, 0.36, 1] }}
-                className="block text-[9vw] sm:text-[5.5vw] lg:text-[3.8vw]"
+                className="block text-[11vw] sm:text-[7vw] lg:text-[4.8vw]"
               >
                 {line}
               </motion.span>
