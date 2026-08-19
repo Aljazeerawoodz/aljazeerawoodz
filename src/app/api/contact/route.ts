@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { sendEnquiryEmail } from "@/lib/email";
+import { saveEnquiry } from "@/lib/db";
 
 export const runtime = "nodejs";
 
@@ -87,6 +88,12 @@ export async function POST(request: NextRequest) {
       contentType: file.type || undefined,
     };
   }
+
+  // Best-effort: stored regardless of whether the email send below
+  // succeeds, so an enquiry is never silently lost to an SMTP hiccup —
+  // it'll still show up in /admin. No-ops entirely if DATABASE_URL isn't
+  // configured (see src/lib/db.ts).
+  await saveEnquiry(parsed.data);
 
   try {
     await sendEnquiryEmail({ ...parsed.data, attachment });

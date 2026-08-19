@@ -115,7 +115,40 @@ via SMTP (§3). Typical setup:
 4. Each user signs into **outlook.office.com** (or the desktop/mobile
    Outlook app) with their own account for mail, calendar, and contacts.
 
-## 5. Going live checklist
+## 5. Enquiry dashboard (`/admin`)
+
+A small internal page that lists every contact-form submission in a table —
+name, contact info, project details, message, plus an editable **status**
+(new / contacted / quoted / won / lost) and a free-text **notes** field that
+save automatically as you edit them. Nothing here is public: it's gated by
+HTTP Basic Auth and, unlike the rest of the site, it **fails closed** —
+if the two env vars below aren't set, `/admin` returns "not configured"
+instead of ever opening up by accident (it shows real customer PII).
+
+**Setup (2 steps, no new account needed if you're already on Vercel):**
+
+1. **Database** — in your Vercel project: **Storage → Create Database →
+   Postgres**. Vercel automatically adds `DATABASE_URL` to your project's
+   environment variables; you don't need to copy/paste anything. The table
+   is created automatically the first time it's needed — no manual
+   migration step.
+2. **Admin login** — under **Settings → Environment Variables**, add:
+   ```
+   ADMIN_USER=<pick a username>
+   ADMIN_PASSWORD=<pick a password>
+   ```
+   These aren't tied to any Microsoft/Google account — they're just a
+   username/password pair you invent for this one page. Use a password
+   manager to generate and store it; don't reuse a real account password.
+3. Redeploy, then visit `https://aljazeerawoodz.com/admin` and sign in with
+   the browser's Basic Auth prompt.
+
+If you skip step 1 (`DATABASE_URL` unset), the contact form still works
+exactly as before and still emails `EMAIL_TO` — it just won't also keep a
+copy in `/admin`. The two features are independent; a hiccup in one never
+blocks the other.
+
+## 6. Going live checklist
 
 - [ ] Rotate the password that was shared in this chat.
 - [ ] Approve/point DNS at the chosen host (§2) without touching M365 records.
@@ -126,3 +159,5 @@ via SMTP (§3). Typical setup:
 - [ ] Swap the placeholder/PDF-sourced imagery for real project photography
       where possible (see `docs/content-sources.md`).
 - [ ] Add real completed projects to `src/data/projects.ts` once available.
+- [ ] Set up the enquiry dashboard (§5) — create a Vercel Postgres database
+      and set `ADMIN_USER`/`ADMIN_PASSWORD`.
