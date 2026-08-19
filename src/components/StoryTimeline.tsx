@@ -1,17 +1,9 @@
-"use client";
-
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
 import type { Locale } from "@/i18n/locales";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { story } from "@/data/company";
 import SectionHeading from "./SectionHeading";
 
 export default function StoryTimeline({ locale, dictionary }: { locale: Locale; dictionary: Dictionary }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollXProgress } = useScroll({ container: ref });
-  const barScale = useTransform(scrollXProgress, [0, 1], [0, 1]);
-
   return (
     <section id="story" className="bg-charcoal py-28 text-warm sm:py-36">
       <div className="container-edit">
@@ -21,18 +13,17 @@ export default function StoryTimeline({ locale, dictionary }: { locale: Locale; 
         />
       </div>
 
-      {/* Desktop: horizontal scroll strip */}
-      <div ref={ref} className="no-scrollbar mt-16 hidden gap-8 overflow-x-auto px-16 pb-4 lg:flex">
+      {/* Desktop: full-width grid — every stage visible at once, no
+          horizontal scrolling (previously a scroll strip with no visible
+          scrollbar, so the last card looked cut off/hidden). */}
+      <div className="container-edit mt-16 hidden grid-cols-2 gap-8 lg:grid xl:grid-cols-4">
         {story.map((stage) => (
-          <article key={stage.number} className="w-[360px] shrink-0 border-t border-warm/20 pt-8">
+          <article key={stage.number} className="border-t border-warm/20 pt-8">
             <span className="font-display text-6xl text-teal">{stage.number}</span>
             <h3 className="mt-6 font-display text-2xl">{stage.title[locale]}</h3>
             <p className="mt-4 text-warm/70">{stage.body[locale]}</p>
           </article>
         ))}
-      </div>
-      <div className="container-edit mt-8 hidden h-px bg-warm/10 lg:block">
-        <motion.div style={{ scaleX: barScale }} className="h-px w-full origin-left bg-teal" />
       </div>
 
       {/* Mobile / tablet: vertical timeline */}
