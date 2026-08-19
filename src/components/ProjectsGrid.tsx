@@ -50,7 +50,7 @@ export default function ProjectsGrid({ locale, dictionary }: { locale: Locale; d
       {filtered.length === 0 ? (
         <div className="flex flex-col items-center justify-center rounded-sm border border-dashed border-charcoal/20 py-28 text-center">
           <p className="font-display text-2xl text-charcoal sm:text-3xl">
-            {locale === "ar" ? "المعرض قيد الإعداد." : "The portfolio is being prepared."}
+            {locale === "ar" ? "المعرض قيد الإعداد." : "The portfolio is under preparation."}
           </p>
           <p className="mt-4 max-w-md text-charcoal/60">
             {locale === "ar"

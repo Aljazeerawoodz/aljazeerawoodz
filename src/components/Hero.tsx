@@ -156,8 +156,8 @@ export default function Hero({ locale, dictionary }: { locale: Locale; dictionar
         >
           <span className="font-bold">
             {locale === "ar"
-              ? "تشطيبات داخلية · نجارة · أثاث مخصص · ديكورات الأفلام والفعاليات"
-              : "Interior Fitout · Joinery · Custom Furniture · Film & Event Sets"}
+              ? "تشطيبات داخلية · نجارة · أثاث مخصص · الفعاليات"
+              : "Interior Fitout · Joinery · Custom Furniture · Events"}
           </span>
         </motion.p>
 
@@ -199,18 +199,7 @@ export default function Hero({ locale, dictionary }: { locale: Locale; dictionar
             </Link>
           </div>
 
-          {useVideo ? (
-            <div className="hidden w-44 flex-col gap-2 sm:flex">
-              <span className="text-sm text-warm/70">{locale === "ar" ? "تصميم داخلي متقن" : "Crafted Interiors"}</span>
-              <span className="relative h-px w-full bg-warm/20">
-                <motion.span
-                  className="absolute top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-teal shadow-[0_0_0_4px_rgba(173,138,82,0.18)]"
-                  animate={reduced ? { left: "0%" } : { left: ["0%", "calc(100% - 6px)", "0%"] }}
-                  transition={reduced ? undefined : { duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                />
-              </span>
-            </div>
-          ) : (
+          {useVideo ? null : (
             /* Slide captions / indicators — only relevant to the photo carousel fallback */
             <div className="hidden items-center gap-4 sm:flex">
               <AnimatePresence mode="wait">

@@ -129,7 +129,7 @@ export interface ProcessStep {
 export const process: ProcessStep[] = [
   {
     number: "01",
-    title: { en: "Requirement Understanding", ar: "فهم المتطلبات" },
+    title: { en: "Requirements Understanding", ar: "فهم المتطلبات" },
     body: {
       en: "Project needs and expectations are defined clearly.",
       ar: "يتم تحديد احتياجات المشروع وتوقعاته بوضوح.",

@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin } from "lucide-react";
 import { isLocale, type Locale } from "@/i18n/locales";
 import { getDictionary } from "@/i18n/dictionaries";
 import { pageMetadata } from "@/lib/seo";
-import { contact } from "@/data/company";
+import { brand, contact } from "@/data/company";
 import { whatsappLink, whatsappMessages } from "@/lib/whatsapp";
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
@@ -42,7 +42,8 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
 
       <section className="container-edit grid grid-cols-1 gap-16 py-24 sm:py-32 lg:grid-cols-[1fr_1.3fr]">
         <div>
-          <p className="eyebrow mb-6">{dictionary.footer.contactHeading}</p>
+          <p className="eyebrow mb-2">{dictionary.footer.contactHeading}</p>
+          <p className="mb-6 font-display text-xl text-charcoal/70">{brand.legalName[locale]}</p>
           <ul className="space-y-6 text-charcoal/80">
             <li className="flex items-start gap-3">
               <Phone className="mt-1 h-5 w-5 shrink-0 text-teal" />

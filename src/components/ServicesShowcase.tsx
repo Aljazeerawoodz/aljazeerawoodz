@@ -8,7 +8,7 @@ import { ArrowUpRight, Plus } from "lucide-react";
 import type { Locale } from "@/i18n/locales";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { services } from "@/data/services";
-import SectionHeading from "./SectionHeading";
+import Reveal from "./Reveal";
 
 export default function ServicesShowcase({ locale, dictionary }: { locale: Locale; dictionary: Dictionary }) {
   const [active, setActive] = useState(0);
@@ -17,7 +17,9 @@ export default function ServicesShowcase({ locale, dictionary }: { locale: Local
   return (
     <section className="border-t border-charcoal/10 bg-warm py-28 sm:py-36">
       <div className="container-edit">
-        <SectionHeading eyebrow={dictionary.nav.services} title={locale === "ar" ? "أربعة مجالات، تنفيذ واحد." : "Four disciplines, one execution."} />
+        <Reveal>
+          <p className="eyebrow">{dictionary.nav.services}</p>
+        </Reveal>
       </div>
 
       {/* Desktop editorial list with hover preview */}
