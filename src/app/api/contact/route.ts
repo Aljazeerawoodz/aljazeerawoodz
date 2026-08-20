@@ -4,6 +4,11 @@ import { sendEnquiryEmail } from "@/lib/email";
 import { saveEnquiry } from "@/lib/db";
 
 export const runtime = "nodejs";
+// SMTP (especially with an image/PDF attachment attached) can take longer
+// than Vercel's short default function timeout, particularly on a cold
+// start. Without this, large-attachment submissions can hang and time out
+// mid-send instead of completing.
+export const maxDuration = 30;
 
 const schema = z.object({
   name: z.string().trim().min(2).max(120),
