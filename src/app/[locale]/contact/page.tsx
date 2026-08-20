@@ -88,7 +88,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
             <iframe
               title="Ras Al Khaimah, UAE"
               src="https://www.google.com/maps?q=Ras+Al+Khaimah,+UAE&output=embed"
-              className="h-64 w-full grayscale"
+              className="h-64 w-full"
               loading="lazy"
             />
           </div>
