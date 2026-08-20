@@ -52,7 +52,8 @@ export default function Footer({ locale, dictionary }: { locale: Locale; diction
           </div>
 
           <div>
-            <p className="eyebrow mb-5">{dictionary.footer.contactHeading}</p>
+            <p className="eyebrow mb-2">{dictionary.footer.contactHeading}</p>
+            <p className="mb-4 text-sm text-charcoal/60">{brand.legalName[locale]}</p>
             <ul className="space-y-3 text-charcoal/75">
               <li className="flex items-start gap-2">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0" />
