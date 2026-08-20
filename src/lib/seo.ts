@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import type { Locale } from "@/i18n/locales";
 import { brand } from "@/data/company";
 
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aljazeerawoodz.com";
+export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.aljazeerawoodz.com";
 
 interface PageSeoInput {
   locale: Locale;
