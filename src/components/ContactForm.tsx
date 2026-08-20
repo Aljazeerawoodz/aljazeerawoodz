@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { CheckCircle2, XCircle } from "lucide-react";
 import type { Locale } from "@/i18n/locales";
@@ -9,10 +9,20 @@ import { projectTypes } from "@/data/company";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
+// How long the success/error confirmation card stays visible before it
+// clears itself, so it doesn't sit on screen forever after a submission.
+const CONFIRMATION_VISIBLE_MS = 30_000;
+
 export default function ContactForm({ locale, dictionary }: { locale: Locale; dictionary: Dictionary }) {
   const [status, setStatus] = useState<Status>("idle");
   const startedAt = useRef(Date.now());
   const t = dictionary.contactForm;
+
+  useEffect(() => {
+    if (status !== "success" && status !== "error") return;
+    const timer = setTimeout(() => setStatus("idle"), CONFIRMATION_VISIBLE_MS);
+    return () => clearTimeout(timer);
+  }, [status]);
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
