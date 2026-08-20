@@ -1,6 +1,8 @@
 "use client";
 
 import { useRef, useState, type FormEvent } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { CheckCircle2, XCircle } from "lucide-react";
 import type { Locale } from "@/i18n/locales";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { projectTypes } from "@/data/company";
@@ -78,7 +80,7 @@ export default function ContactForm({ locale, dictionary }: { locale: Locale; di
         </label>
         <select id="projectType" name="projectType" required defaultValue="" className={inputClass}>
           <option value="" disabled>
-            —
+            {t.selectPlaceholder}
           </option>
           {projectTypes[locale].map((type) => (
             <option key={type} value={type}>
@@ -128,8 +130,34 @@ export default function ContactForm({ locale, dictionary }: { locale: Locale; di
           {status === "submitting" ? t.submitting : t.submit}
         </button>
 
-        {status === "success" ? <p className="mt-4 text-sm text-emerald-700">{t.success}</p> : null}
-        {status === "error" ? <p className="mt-4 text-sm text-red-700">{t.error}</p> : null}
+        <AnimatePresence mode="wait">
+          {status === "success" ? (
+            <motion.div
+              key="success"
+              initial={{ opacity: 0, y: -8, scale: 0.96 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -8, scale: 0.96 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-4 flex items-center gap-3 rounded-sm border border-emerald-200 bg-emerald-50 px-5 py-4"
+            >
+              <CheckCircle2 className="h-6 w-6 shrink-0 text-emerald-600" />
+              <p className="text-sm font-medium text-emerald-800">{t.success}</p>
+            </motion.div>
+          ) : null}
+          {status === "error" ? (
+            <motion.div
+              key="error"
+              initial={{ opacity: 0, y: -8, scale: 0.96 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -8, scale: 0.96 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-4 flex items-center gap-3 rounded-sm border border-red-200 bg-red-50 px-5 py-4"
+            >
+              <XCircle className="h-6 w-6 shrink-0 text-red-600" />
+              <p className="text-sm font-medium text-red-800">{t.error}</p>
+            </motion.div>
+          ) : null}
+        </AnimatePresence>
       </div>
     </form>
   );

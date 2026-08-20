@@ -51,6 +51,7 @@ const dictionaries = {
       error: "Something went wrong sending your enquiry. Please try WhatsApp or call us directly.",
       required: "Required",
       invalidEmail: "Enter a valid email address",
+      selectPlaceholder: "Please select",
     },
   },
   ar: {
@@ -103,6 +104,7 @@ const dictionaries = {
       error: "حدث خطأ أثناء إرسال الطلب. يرجى المحاولة عبر واتساب أو الاتصال بنا مباشرة.",
       required: "حقل مطلوب",
       invalidEmail: "يرجى إدخال بريد إلكتروني صحيح",
+      selectPlaceholder: "الرجاء الاختيار",
     },
   },
 } satisfies Record<Locale, Record<string, Record<string, string>>>;
