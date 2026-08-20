@@ -63,13 +63,26 @@ export default function ServicesShowcase({ locale, dictionary }: { locale: Local
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className="absolute inset-0"
             >
-              <Image
-                src={services[active]!.image}
-                alt={services[active]!.imageAlt[locale]}
-                fill
-                sizes="40vw"
-                className="object-cover"
-              />
+              {services[active]!.video ? (
+                <video
+                  key={services[active]!.video}
+                  src={services[active]!.video}
+                  poster={services[active]!.image}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+              ) : (
+                <Image
+                  src={services[active]!.image}
+                  alt={services[active]!.imageAlt[locale]}
+                  fill
+                  sizes="40vw"
+                  className="object-cover"
+                />
+              )}
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-charcoal/80 to-transparent p-8">
                 <p className="max-w-sm text-warm/90">{services[active]!.intro[locale]}</p>
               </div>
@@ -105,7 +118,19 @@ export default function ServicesShowcase({ locale, dictionary }: { locale: Local
                     className="overflow-hidden"
                   >
                     <div className="relative mb-6 h-56 overflow-hidden rounded-sm">
-                      <Image src={service.image} alt={service.imageAlt[locale]} fill className="object-cover" />
+                      {service.video ? (
+                        <video
+                          src={service.video}
+                          poster={service.image}
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          className="absolute inset-0 h-full w-full object-cover"
+                        />
+                      ) : (
+                        <Image src={service.image} alt={service.imageAlt[locale]} fill className="object-cover" />
+                      )}
                     </div>
                     <p className="mb-6 text-charcoal/70">{service.intro[locale]}</p>
                     <Link href={`/${locale}/services/${service.slug}`} className="text-sm font-medium text-teal underline underline-offset-4">

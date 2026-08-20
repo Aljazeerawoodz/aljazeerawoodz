@@ -9,6 +9,10 @@ export interface Service {
   capabilities: BiList;
   image: string;
   imageAlt: Bi;
+  /** Optional background video for the hover/accordion preview — takes
+      precedence over `image` when present. `image` still doubles as the
+      video's poster frame, so it's always required either way. */
+  video?: string;
 }
 
 export const services: Service[] = [
@@ -25,8 +29,9 @@ export const services: Service[] = [
       en: ["Residential spaces", "Commercial interiors", "Turnkey fitout solutions", "Retail spaces", "Events & Exhibitions", "Kiosk works"],
       ar: ["المساحات السكنية", "التصاميم الداخلية التجارية", "حلول التجهيزات الجاهزة", "المساحات التجارية", "الفعاليات والمعارض", "أعمال الأكشاك"],
     },
-    image: "/images/wooden.jpg",
+    image: "/video/Bulidstart-poster.jpg",
     imageAlt: { en: "Sculptural wood wall detailing", ar: "تفاصيل جدارية خشبية منحوتة" },
+    video: "/video/Bulidstart-web.mp4",
   },
   {
     slug: "joinery",

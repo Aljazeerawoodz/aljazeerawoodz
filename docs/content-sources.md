@@ -131,3 +131,15 @@ either way in chat, so still treated as illustrative rather than
 explicitly claimed as a completed project. Source is portrait (592×1296);
 cropped with `object-top` to favor the top of frame since a center crop
 would lose the most detailed part of the piece.
+
+## Services section — Interior Fitout preview video
+
+`public/video/Bulidstart-web.mp4` (+ `Bulidstart-poster.jpg`) — client-
+supplied file (`public/video/Bulidstart.mp4`, re-encoded here: audio
+stripped, faststart flag added, capped to 1920px wide). Used as the
+hover-preview background for the "Interior Fitout" service on the home
+page's Services section (desktop hover panel + mobile accordion),
+replacing the earlier `wooden.jpg` still image. Source/license
+unconfirmed as of this addition — same caveat as the other client-
+supplied videos above: treat as illustrative rather than a confirmed
+completed-project claim unless the client confirms otherwise.
