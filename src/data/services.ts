@@ -9,10 +9,19 @@ export interface Service {
   capabilities: BiList;
   image: string;
   imageAlt: Bi;
-  /** Optional background video for the hover/accordion preview — takes
-      precedence over `image` when present. `image` still doubles as the
-      video's poster frame, so it's always required either way. */
+  /** Optional background video for the home page's hover/accordion
+      preview — takes precedence over `image` when present. `image` still
+      doubles as the video's poster frame, so it's always required either
+      way. */
   video?: string;
+  /** Optional background video for the service detail page's main image
+      (services/[slug]/page.tsx) — separate from `video` above since the
+      two spots can reasonably show different footage. */
+  detailVideo?: string;
+  /** Poster frame for `detailVideo`. Only meaningful alongside it — a
+      dedicated field rather than reusing `image`, since `image` is that
+      video's own matching poster, not this one's. */
+  detailImage?: string;
 }
 
 export const services: Service[] = [
@@ -32,6 +41,8 @@ export const services: Service[] = [
     image: "/video/Bulidstart-poster.jpg",
     imageAlt: { en: "Sculptural wood wall detailing", ar: "تفاصيل جدارية خشبية منحوتة" },
     video: "/video/Bulidstart-web.mp4",
+    detailVideo: "/video/cupboard-fitout-web.mp4",
+    detailImage: "/video/cupboard-fitout-poster.jpg",
   },
   {
     slug: "joinery",

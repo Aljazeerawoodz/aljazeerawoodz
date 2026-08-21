@@ -143,3 +143,16 @@ replacing the earlier `wooden.jpg` still image. Source/license
 unconfirmed as of this addition — same caveat as the other client-
 supplied videos above: treat as illustrative rather than a confirmed
 completed-project claim unless the client confirms otherwise.
+
+## Service detail page — Interior Fitout main image video
+
+`public/video/cupboard-fitout-web.mp4` (+ `cupboard-fitout-poster.jpg`) —
+client-supplied file (originally
+`Cupboard_fit-out_construction_in…_202608211207.mp4`, re-encoded here:
+audio stripped, faststart flag added, capped to 1920px wide). Used as the
+main image on the Interior Fitout service detail page
+(`/services/interior-fitout`), separate from the `Bulidstart` video used
+in the home page's Services section preview for the same service — the
+two spots intentionally show different footage. Source/license
+unconfirmed as of this addition — same caveat as the other client-
+supplied videos: illustrative, not a confirmed completed-project claim.

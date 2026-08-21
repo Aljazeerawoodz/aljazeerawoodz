@@ -68,7 +68,19 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
             </Link>
           </div>
           <Reveal delay={0.1} className="relative aspect-[4/5] overflow-hidden rounded-sm">
-            <Image src={service.image} alt={service.imageAlt[locale]} fill sizes="45vw" className="object-cover" />
+            {service.detailVideo ? (
+              <video
+                src={service.detailVideo}
+                poster={service.detailImage}
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            ) : (
+              <Image src={service.image} alt={service.imageAlt[locale]} fill sizes="45vw" className="object-cover" />
+            )}
           </Reveal>
         </div>
       </section>
