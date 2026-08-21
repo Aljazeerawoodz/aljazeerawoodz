@@ -19,7 +19,7 @@ const strip: { src: string; alt: string; video?: string }[] = [
   { src: "/images/wood-shingle-detail.jpg", alt: "Traditional carved wood shingle facade detail" },
   { src: "/video/project08-poster.jpg", alt: "Custom-built wood cabinetry", video: "/video/project08-web.mp4" },
   { src: "/images/hero-main.jpg", alt: "Sculptural wood wall detailing" },
-  { src: "/images/kitchen-alt.jpg", alt: "Wood-panelled kitchen detail" },
+  { src: "/video/Bulidstart-poster.jpg", alt: "Building shell under construction", video: "/video/Bulidstart-web.mp4" },
 ];
 
 export default function MaterialSection({ locale }: { locale: Locale }) {
@@ -80,7 +80,7 @@ export default function MaterialSection({ locale }: { locale: Locale }) {
 
       {/* Same padding scale as .container-edit so the strip's left edge
           lines up with the heading above it instead of looking offset. */}
-      <div className="no-scrollbar flex gap-6 overflow-x-auto px-6 sm:px-10 lg:px-16">
+      <div className="no-scrollbar flex [justify-content:safe_center] gap-6 overflow-x-auto px-6 sm:px-10 lg:px-16">
         {strip.map((image, i) => (
           <motion.div
             key={image.src}
