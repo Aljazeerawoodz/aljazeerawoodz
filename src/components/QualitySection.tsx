@@ -22,13 +22,13 @@ export default function QualitySection({ locale }: { locale: Locale; dictionary:
               loop
               playsInline
               preload="auto"
-              poster="/video/project08-poster.jpg"
+              poster="/video/Bulidstart-poster.jpg"
             >
-              <source src="/video/project08-web.mp4" type="video/mp4" />
+              <source src="/video/Bulidstart-web.mp4" type="video/mp4" />
             </video>
             <Image
-              src="/video/project08-poster.jpg"
-              alt="Custom-built wood cabinetry"
+              src="/video/Bulidstart-poster.jpg"
+              alt="Building shell under construction"
               fill
               sizes="35vw"
               className="hidden object-cover motion-reduce:block"
