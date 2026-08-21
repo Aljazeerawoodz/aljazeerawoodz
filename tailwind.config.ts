@@ -11,8 +11,8 @@ const config: Config = {
           line: "#33343780",
         },
         warm: {
-          DEFAULT: "#f4e9d8",
-          dim: "#e9dac0",
+          DEFAULT: "#ecdcbc",
+          dim: "#e0cba1",
         },
         beige: "#e9e2d6",
         wood: {
