@@ -26,7 +26,7 @@ export const contact = {
   } satisfies Bi,
   social: {
     instagram: "https://instagram.com/al_jazeera_woodz",
-    facebook: "https://facebook.com/AlJazeeraWoodz",
+    facebook: "https://www.facebook.com/share/19ezjhn4MF/",
     linkedin: "https://linkedin.com/company/al-jazeera-woodz",
   },
 };
