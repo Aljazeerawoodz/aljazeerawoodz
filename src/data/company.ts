@@ -21,8 +21,8 @@ export const contact = {
   email: "aljazeerawoodz@gmail.com",
   location: { en: "Ras Al Khaima, UAE", ar: "رأس الخيمة، الإمارات العربية المتحدة" } satisfies Bi,
   address: {
-    en: "Units 1–4, Aljawis Street, Aljawis, Ras Al Khaimah, United Arab Emirates",
-    ar: "الوحدات 1-4، شارع الجويس، الجويس، رأس الخيمة، الإمارات العربية المتحدة",
+    en: "224 Khuzam Street, Al Araibi, Ras Al Khaimah, United Arab Emirates",
+    ar: "224 شارع خزام، العريبي، رأس الخيمة، الإمارات العربية المتحدة",
   } satisfies Bi,
   social: {
     instagram: "https://instagram.com/al_jazeera_woodz",
