@@ -49,8 +49,10 @@ export default function Navbar({ locale, dictionary }: { locale: Locale; diction
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 ease-editorial ${
-        transparent ? "bg-transparent" : "bg-warm/90 backdrop-blur-md shadow-sm shadow-charcoal/5"
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-500 ease-editorial ${
+        transparent
+          ? "border-transparent bg-transparent"
+          : "border-warm/40 bg-warm/60 shadow-sm shadow-charcoal/5 backdrop-blur-xl backdrop-saturate-150"
       }`}
     >
       <div className="container-edit flex h-20 items-center justify-between">
@@ -123,7 +125,7 @@ export default function Navbar({ locale, dictionary }: { locale: Locale; diction
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed left-0 right-0 top-20 z-40 flex h-[calc(100dvh-5rem)] flex-col overflow-y-auto bg-charcoal px-6 py-10 lg:hidden"
+            className="fixed left-0 right-0 top-20 z-40 flex h-[calc(100dvh-5rem)] flex-col overflow-y-auto border-t border-warm/10 bg-charcoal/85 px-6 py-10 backdrop-blur-2xl backdrop-saturate-150 lg:hidden"
           >
             <nav className="flex flex-1 flex-col justify-center gap-6">
               {links.map((link, i) => (

@@ -148,7 +148,7 @@ export default function ContactForm({ locale, dictionary }: { locale: Locale; di
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -8, scale: 0.96 }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-4 flex items-center gap-3 rounded-sm border border-emerald-200 bg-emerald-50 px-5 py-4"
+              className="mt-4 flex items-center gap-3 rounded-sm border border-emerald-200/60 bg-emerald-50/60 px-5 py-4 backdrop-blur-md backdrop-saturate-150 shadow-sm"
             >
               <CheckCircle2 className="h-6 w-6 shrink-0 text-emerald-600" />
               <p className="text-sm font-medium text-emerald-800">{t.success}</p>
@@ -161,7 +161,7 @@ export default function ContactForm({ locale, dictionary }: { locale: Locale; di
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -8, scale: 0.96 }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-4 flex items-center gap-3 rounded-sm border border-red-200 bg-red-50 px-5 py-4"
+              className="mt-4 flex items-center gap-3 rounded-sm border border-red-200/60 bg-red-50/60 px-5 py-4 backdrop-blur-md backdrop-saturate-150 shadow-sm"
             >
               <XCircle className="h-6 w-6 shrink-0 text-red-600" />
               <p className="text-sm font-medium text-red-800">{t.error}</p>
