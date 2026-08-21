@@ -18,7 +18,7 @@ export const brand = {
 export const contact = {
   phones: ["+971 56 932 1000", "+971 50 774 5518", "+971 50 522 0817"],
   whatsappNumber: "971569321000",
-  email: "info@aljazeerawoodz.com",
+  email: "aljazeerawoodz@gmail.com",
   location: { en: "Ras Al Khaima, UAE", ar: "رأس الخيمة، الإمارات العربية المتحدة" } satisfies Bi,
   address: {
     en: "224 Khuzam Street, Al Araibi, Ras Al Khaimah, United Arab Emirates",

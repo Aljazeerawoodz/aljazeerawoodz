@@ -22,12 +22,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   });
 }
 
-// This page shows the sales-facing address specifically (enquiries/new
-// business) rather than the site-wide contact.email (info@) shown
-// elsewhere, e.g. the footer — both are real, verified "send mail as"
-// addresses on the same forwarding setup.
-const CONTACT_PAGE_EMAIL = "sales@aljazeerawoodz.com";
-
 export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale: rawLocale } = await params;
   const locale: Locale = isLocale(rawLocale) ? rawLocale : "en";
@@ -63,8 +57,8 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
             </li>
             <li className="flex items-start gap-3">
               <Mail className="mt-1 h-5 w-5 shrink-0 text-teal" />
-              <a href={`mailto:${CONTACT_PAGE_EMAIL}`} dir="ltr" className="hover:text-teal">
-                {CONTACT_PAGE_EMAIL}
+              <a href={`mailto:${contact.email}`} dir="ltr" className="hover:text-teal">
+                {contact.email}
               </a>
             </li>
             <li className="flex items-start gap-3">
@@ -85,7 +79,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
             <a href={`tel:${contact.phones[0]!.replace(/\s/g, "")}`} className="rounded-full border border-charcoal/20 px-6 py-3 text-sm font-medium text-charcoal">
               {dictionary.common.call}
             </a>
-            <a href={`mailto:${CONTACT_PAGE_EMAIL}`} className="rounded-full border border-charcoal/20 px-6 py-3 text-sm font-medium text-charcoal">
+            <a href={`mailto:${contact.email}`} className="rounded-full border border-charcoal/20 px-6 py-3 text-sm font-medium text-charcoal">
               {dictionary.common.email}
             </a>
           </div>
