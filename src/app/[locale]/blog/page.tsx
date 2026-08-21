@@ -47,7 +47,7 @@ export default async function BlogIndexPage({ params }: { params: Promise<{ loca
         <Reveal>
           <Link href={`/${locale}/blog/${featured.slug}`} data-cursor-hover className="group grid grid-cols-1 gap-8 border-b border-charcoal/10 pb-16 lg:grid-cols-2 lg:items-center lg:gap-14">
             <div className="relative aspect-[16/11] overflow-hidden rounded-sm">
-              <Image src={featured.image} alt="" fill sizes="50vw" className="object-cover transition-transform duration-700 ease-editorial group-hover:scale-105" />
+              <Image src={featured.image} alt={featured.title[locale]} fill sizes="50vw" className="object-cover transition-transform duration-700 ease-editorial group-hover:scale-105" />
             </div>
             <div>
               <p className="eyebrow mb-3">{featured.category[locale]}</p>
@@ -66,7 +66,7 @@ export default async function BlogIndexPage({ params }: { params: Promise<{ loca
             <Reveal key={article.slug} delay={i * 0.06}>
               <Link href={`/${locale}/blog/${article.slug}`} data-cursor-hover className="group block">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
-                  <Image src={article.image} alt="" fill sizes="33vw" className="object-cover transition-transform duration-700 ease-editorial group-hover:scale-105" />
+                  <Image src={article.image} alt={article.title[locale]} fill sizes="33vw" className="object-cover transition-transform duration-700 ease-editorial group-hover:scale-105" />
                 </div>
                 <p className="eyebrow mt-5">{article.category[locale]}</p>
                 <h3 className="mt-2 font-display text-xl leading-snug text-charcoal group-hover:text-teal sm:text-2xl">

@@ -32,7 +32,7 @@ export default function JournalSection({ locale, dictionary }: { locale: Locale;
               <div className="relative aspect-[16/10] overflow-hidden rounded-sm">
                 <Image
                   src={featured.image}
-                  alt=""
+                  alt={featured.title[locale]}
                   fill
                   sizes="60vw"
                   className="object-cover transition-transform duration-700 ease-editorial group-hover:scale-105"
@@ -53,7 +53,7 @@ export default function JournalSection({ locale, dictionary }: { locale: Locale;
               <Reveal key={article.slug} delay={0.1 + i * 0.1}>
                 <Link href={`/${locale}/blog/${article.slug}`} data-cursor-hover className="group flex gap-5">
                   <div className="relative h-24 w-28 shrink-0 overflow-hidden rounded-sm sm:h-28 sm:w-32">
-                    <Image src={article.image} alt="" fill sizes="140px" className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <Image src={article.image} alt={article.title[locale]} fill sizes="140px" className="object-cover transition-transform duration-700 group-hover:scale-105" />
                   </div>
                   <div>
                     <p className="eyebrow">{article.category[locale]}</p>

@@ -52,7 +52,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ locale
         </div>
 
         <div className="relative mt-12 aspect-[16/9] w-full overflow-hidden">
-          <Image src={article.image} alt="" fill sizes="100vw" className="object-cover" priority />
+          <Image src={article.image} alt={article.title[locale]} fill sizes="100vw" className="object-cover" priority />
         </div>
 
         <div className="container-edit max-w-3xl py-16">

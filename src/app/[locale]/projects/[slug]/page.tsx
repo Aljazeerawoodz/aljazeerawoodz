@@ -47,9 +47,9 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
       {project.gallery.length ? (
         <section className="container-edit grid grid-cols-1 gap-6 py-20 sm:grid-cols-2">
-          {project.gallery.map((src) => (
+          {project.gallery.map((src, i) => (
             <div key={src} className="relative aspect-[4/3] overflow-hidden rounded-sm">
-              <Image src={src} alt="" fill sizes="50vw" className="object-cover" />
+              <Image src={src} alt={`${project.title[locale]} — ${i + 1}`} fill sizes="50vw" className="object-cover" />
             </div>
           ))}
         </section>
